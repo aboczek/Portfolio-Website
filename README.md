@@ -36,7 +36,17 @@ My motivation for this website is to have my personal portfolio website to put m
 
 ## User Stories
 - User Story
-    **placeholder**
+    - As a user, I want to be able to land on main page.
+    - As a user, I want to be able to navigate to About page.
+    - As a user, I want to be able to navigate to Projects page.
+    - As a user, I want to be able to navigate to Contact page.
+    - As a user, I want to navigate through website easily.
+    - As a user, I want to see projects done by the developer.
+    - As a user, I want to be able to open link with projects on GitHub.
+    - As a user, I want to be able to visit developer's GitHub.
+    - As a user, I want to be able to download CV from Developer.
+    - As a user, I want to see where Developer is located.
+    - As a user, I want to contact the Developer if I want to message him/her.
 
 
 ## Website Goals
