@@ -1,6 +1,6 @@
 # Portfolio Website for myself! 
 
-This Project represents me my work and information about me, it should work on desktop tablets and mobiles without any issues.
+Welcome to my Portfolio project, it is about my coding story with information about me, my projects and my story.
 
 **placeholder**
 
