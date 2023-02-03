@@ -51,15 +51,22 @@ My motivation for this website is to have my personal portfolio website to put m
 
 ## Website Goals
 
-**placeholder**
+Websites goal is to promote myself as full stack developer and show off my projects and skills I have gained over last few months.
 
 ## Requirements
 
-**placeholder**
+- Landing Page.
+- About Page.
+- Contact Page.
+- Projects showcase page.
+- Download CV.
+- Google Maps.
 
 ## Expectations
 
-**placeholder**
+- I expect my website to be easily accessible.
+- I expect my website to attract future employers.
+- I expect to showcase my projects and skills.
 
 ## Design
 
