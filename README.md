@@ -30,7 +30,7 @@ Welcome to my Portfolio project, it is about my coding story with information ab
 
 # Motivation
 
-**placeholder**
+My motivation for this website is to have my personal portfolio website to put myself out in the tech jobs market.
 
 # User Experience (UX)
 
