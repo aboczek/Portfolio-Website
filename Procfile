@@ -1,0 +1,1 @@
+web: gunicorn adam_portfolio.wsgi
