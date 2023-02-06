@@ -162,5 +162,6 @@ Websites goal is to promote myself as full stack developer and show off my proje
 
 # Credits:
 
+- <a href="https://www.freepik.com/free-vector/digital-coding-background-with-numbers-zero-one_12686644.htm#query=developer%20background&position=2&from_view=search&track=sph">Image by starline</a> on Freepik
 
 **placeholder**
