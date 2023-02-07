@@ -14,9 +14,8 @@ html {
 }
 
 body {
-    background: var(--black);
+    background: url("/static/images/bg.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: var(--white);
 }
 
-canvas {
-    display: block;
-}
