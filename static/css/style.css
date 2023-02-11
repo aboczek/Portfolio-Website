@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap');
+
 * {
     padding: 0;
     margin: 0;
@@ -7,6 +9,7 @@
 :root {
     --white: #fff;
     --black: #000;
+    --blue: #008cff;
 }
 
 html {
@@ -14,8 +17,48 @@ html {
 }
 
 body {
-    background: url("/static/images/bg.jpg") no-repeat center center fixed;
-    background-size: cover;
-    color: var(--white);
+    background-color: var(--white);
+    color: var(--black);
+    font-family: 'PT-serif', sans-serif;
 }
 
+#bnr-container {
+    /* background-image: url("/static/images/pexels-pixabay-247791.jpg"); */
+    object-fit: cover;
+    height: 25rem;
+    width: 100%;
+    /* filter: blur(5px); */
+
+}
+
+#panel {
+    background-color: grey;
+    display: flex;
+    align-content: center;
+    margin: 5rem auto 0 auto;
+    height: auto;
+    width: auto;
+}
+
+#links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 2rem;
+}
+
+#links > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10rem auto 0 auto;
+    width: 20rem;
+    height: 5rem;
+    color: var(--white);
+    background-color: var(--blue);
+    text-decoration: none;
+    border-radius: 10%;
+    border-color: var(--black);
+    border-width: 1rem;
+}
