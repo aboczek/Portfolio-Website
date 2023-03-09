@@ -10,6 +10,15 @@
     --white: #fff;
     --black: #000;
     --blue: #008cff;
+    --green: #00c00a;
+    --background: #333;
+
+    --bar-width: 4.5rem;
+    --bar-height: 0.8rem;
+    --hamburger-gap: 0.6rem;
+    --hamburger-margin: 0.8rem;
+    --animation-timing: 200ms ease-in-out;
+    --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2)
 }
 
 html {
@@ -20,22 +29,120 @@ body {
     background-color: var(--white);
     color: var(--black);
     font-family: 'PT-serif', sans-serif;
+    font-size: 2rem;
 }
+
+/* Header */
 
 #bnr-container {
-    /* background-image: url("/static/images/pexels-pixabay-247791.jpg"); */
     object-fit: cover;
-    height: 25rem;
+    height: 20rem;
     width: 100%;
-    /* filter: blur(5px); */
-
+    filter: blur(3px);
 }
 
+#bg-color {
+    background-color: var(--black);
+    filter: blur(1px);
+}
+
+#welcome-txt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+    font-size: 3rem;
+}
+
+/* Sidebar/Hamburger */
+
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    gap: var(--hamburger-gap);
+    width: max-content;
+    position: absolute;
+    top: var(--hamburger-margin);
+    left: var(--hamburger-margin);
+    z-index: 2;
+    cursor: pointer;
+    --x-width: calc(var(--hamburger-height) * 1.41421356237);
+}
+
+.hamburger-menu:has(input:checked) {
+    --background: var(--white);
+}
+
+.hamburger-menu:has(input:focus-visible)::before,
+.hamburger-menu:has(input:focus-visible)::after,
+.hamburger-menu input:focus-visible {
+    border: 1px solid var(--white);
+    box-shadow: 0 0 0 1px var(--background);
+}
+
+.hamburger-menu::before,
+.hamburger-menu::after,
+.hamburger-menu input {
+    content: "";
+    width: var(--bar-width);
+    height: var(--bar-height);
+    background-color: var(--background);
+    border-radius: 99rem;
+    transform-origin: left center;
+    transition: opacity var(--animation-timing), width var(--animation-timing),
+     rotate var(--animation-timing), translate var(--animation-timing), 
+     background-color var(--animation-timing);
+}
+
+.hamburger-menu input {
+    appearance: none;
+    outline: none;
+    pointer-events: none;
+}
+
+.hamburger-menu:has(input:checked)::before {
+    rotate: 45deg;
+    width: var(--x-width);
+    translate: 0 calc(var(--bar-height) / -2);
+}
+
+.hamburger-menu:has(input:checked)::after {
+    rotate: -45deg;
+    width: var(--x-width);
+    translate: 0 calc(var(--bar-height) / 2);
+}
+
+.hamburger-menu input:checked {
+    opacity: 0;
+    width: 0;
+}
+
+.sidebar {
+    transition: translate var(--animation-timing);
+    translate: -100%;
+    padding: 0.8rem 1.6rem;
+    padding-top: calc(var(--hamburger-height) + var(--hamburger-margin) + 1.6rem);
+    background-color: var(--background);
+    color: var(--white);
+    max-width: 16rem;
+    min-height: 100vh;
+}
+
+.hamburger-menu:has(input:checked) + .sidebar {
+    translate: 0;
+}
+
+/* Buttons */
+
 #panel {
-    background-color: grey;
     display: flex;
     align-content: center;
-    margin: 5rem auto 0 auto;
+    margin: 6rem auto 0 auto;
     height: auto;
     width: auto;
 }
@@ -48,7 +155,22 @@ body {
     font-size: 2rem;
 }
 
-#links > a {
+#links>a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10rem auto 0 auto;
+    width: 20rem;
+    height: 5rem;
+    color: var(--blue);
+    background-color: var(--white);
+    text-decoration: none;
+    border-radius: 2rem;
+    border-color: var(--black);
+    border: 2px solid var(--blue);
+}
+
+#links>a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -58,7 +180,17 @@ body {
     color: var(--white);
     background-color: var(--blue);
     text-decoration: none;
-    border-radius: 10%;
-    border-color: var(--black);
-    border-width: 1rem;
+    border-radius: 2rem;
+    border-width: 2px;
+    transition: 0.2s ease-in-out;
+}
+
+/* Small Devices */
+
+@media (max-width: 576px) {
+
+    #small-device,
+    #bnr-container {
+        display: none;
+    }
 }
