@@ -207,6 +207,18 @@ body {
     transition: 0.2s ease-in-out;
 }
 
+/* Footer */
+
+#footer-logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
 /* Small Devices */
 
 @media (max-width: 576px) {
