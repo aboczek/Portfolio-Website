@@ -219,6 +219,34 @@ body {
     width: 100%;
 }
 
+/* About me */
+
+#details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10rem;
+}
+
+#details-info {
+    padding-right: 2rem;
+}
+
+#details-info > p {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#details-info-two > p {
+    display: flex;
+    justify-content: flex-start;
+}
+
+#skills {
+
+    
+}
 /* Small Devices */
 
 @media (max-width: 576px) {
