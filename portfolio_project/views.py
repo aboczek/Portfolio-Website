@@ -5,11 +5,16 @@ from django.views.generic import TemplateView
 # Create your views here.
 
 
-# class base_template(TemplateView):
-#     template_name = 'base.html'
+# Home page
 def home(request):
     return render(request, "./index.html")
 
 
+# About me page
 def aboutMe(request):
     return render(request, "./about-me.html")
+
+
+# Projects page
+def projects(request):
+    return render(request, "./projects.html")

@@ -260,6 +260,15 @@ body {
     margin-right: auto;
 }
 
+/* Projects page */
+
+#projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Small Devices */
 
 @media (max-width: 576px) {
