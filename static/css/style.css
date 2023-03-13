@@ -244,9 +244,22 @@ body {
 }
 
 #skills {
-
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 2rem;
 }
+
+#skills-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 70vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* Small Devices */
 
 @media (max-width: 576px) {
