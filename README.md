@@ -144,13 +144,13 @@ Websites goal is to promote myself as full stack developer and show off my proje
 
 4. Known bugs.
 
-**placeholder**
+- CV doesnt download (Fixed)
 
 # Testing user stories
 
 | **Feature**                     | **Action**                          | **Expected Result**                                                                  | **Result** |
 |---------------------------------|-------------------------------------|--------------------------------------------------------------------------------------|-------------------|
-| palceholder | placeholder | placeholder              |
+| placeholder | placeholder | placeholder              |
 <details><summary>Picture</summary>
 <img src="" alt=""/>
 </details>

@@ -160,14 +160,6 @@ body {
 
 /* Buttons */
 
-#panel {
-    display: flex;
-    align-content: center;
-    margin: 6rem auto 0 auto;
-    height: auto;
-    width: auto;
-}
-
 #links {
     display: flex;
     justify-content: center;
@@ -176,7 +168,7 @@ body {
     font-size: 2rem;
 }
 
-#links>a {
+#links > a {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -192,10 +184,43 @@ body {
     border: 2px solid var(--blue);
 }
 
-#links>a:hover {
+#links > a:hover {
+    margin: 3rem auto 0 auto;
+    width: 12rem;
+    height: 5rem;
+    color: var(--white);
+    background-color: var(--blue);
+    text-decoration: none;
+    border-radius: 2rem;
+    border-width: 2px;
+    transition: 0.2s ease-in-out;
+}
+
+#link-login {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    font-size: 2rem;
+}
+
+#link-login > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem auto 0 auto;
+    width: 12rem;
+    height: 5rem;
+    color: var(--grey);
+    font-weight: 700;
+    background-color: var(--white);
+    text-decoration: none;
+    border-radius: 2rem;
+    border-color: var(--black);
+    border: 2px solid var(--blue);
+}
+
+#link-login > a:hover {
     margin: 3rem auto 0 auto;
     width: 12rem;
     height: 5rem;
