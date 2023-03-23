@@ -294,6 +294,14 @@ body {
     align-items: center;
 }
 
+#project-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4rem;
+}
+
 /* Small Devices */
 
 @media (max-width: 576px) {
