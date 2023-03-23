@@ -4,17 +4,24 @@ from django.views.generic import TemplateView
 
 # Create your views here.
 
-
-# Home page
 def home(request):
-    return render(request, "./index.html")
+    """
+    home page
+    """
+    return render(request, "pages/index.html")
 
 
-# About me page
-def aboutMe(request):
-    return render(request, "./about-me.html")
+def about_me(request):
+    """
+    About me page
+    """
+    context = {"title": "test 123"}
+    return render(request, "pages/about-me.html", context)
 
 
-# Projects page
 def projects(request):
-    return render(request, "./projects.html")
+    """
+    Projects page
+    """
+    context = {"title": "my Projects"}
+    return render(request, "pages/projects.html", context)

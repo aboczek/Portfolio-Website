@@ -1,0 +1,21 @@
+<div>
+    <label class="hamburger-menu">
+        <input type="checkbox">
+    </label>
+    <aside class="sidebar">
+        <nav id="links">
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'about_me' %}">About me</a>
+            <a href="{% url 'projects' %}">Projects</a>
+            <a href="#">CV</a>
+        </nav>
+        {% if debug_flag %}
+        <nav id="link-login">
+            <a href="#">Login</a>
+        </nav>
+        {% endif %}
+    </aside>
+    <!-- block for future templating -->
+   
+
+</div>
