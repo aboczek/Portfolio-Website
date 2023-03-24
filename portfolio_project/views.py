@@ -25,3 +25,10 @@ def projects(request):
     """
     context = {"title": "my Projects"}
     return render(request, "pages/projects.html", context)
+
+def login_panel(request):
+    """
+    Login panel
+    """
+    context = {"title": "Login Panel"}
+    return render(request, "pages/login.html", context)

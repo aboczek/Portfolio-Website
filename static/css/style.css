@@ -12,6 +12,7 @@
     --blue: #008cff;
     --green: #00c00a;
     --grey: #333;
+    --light-grey: #868686;
 
     --bar-width: 4.5rem;
     --bar-height: 0.8rem;
@@ -300,6 +301,35 @@ body {
     justify-content: center;
     align-items: center;
     padding-top: 4rem;
+}
+
+/* Login panel */
+
+#login-text,
+#login-panel,
+#login-panel > label,
+#login-panel > input,
+#btn-login  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#login-panel > input {
+    border:2px solid var(--light-grey);
+    padding-left: 1rem;
+}
+
+#login-label {
+    margin-top: 5rem;
+}
+
+.btn-primary {
+    font-size: 2rem;
+    margin: 2rem;
+    padding: 1rem;
+    width: 10rem;
 }
 
 /* Small Devices */
