@@ -274,14 +274,14 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding-top: 2rem;
+    padding: 2rem 5rem 0 5rem;
 }
 
 #skills-info {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    width: 70vw;
+    width: 35rem;
     margin-left: auto;
     margin-right: auto;
 }
@@ -379,13 +379,4 @@ body {
     color: var(--grey);
     background-color: var(--white);
     border-color: var(--black) var(--black) var(--white);
-}
-/* Small Devices */
-
-@media (max-width: 576px) {
-
-    #small-device,
-    #bnr-container {
-        display: none;
-    }
 }
