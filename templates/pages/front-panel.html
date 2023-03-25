@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block template %}
+<h1 id="details">Details about me</h1>
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
+            role="tab" aria-controls="home" aria-selected="true">Details</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button"
+            role="tab" aria-controls="profile" aria-selected="false">Skills</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button"
+            role="tab" aria-controls="contact" aria-selected="false">Projects</button>
+    </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <form>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-9 input-details">
+                                    <label for="full-name">Full name</label>
+                                    <input type="text" id="full-name" placeholder="Your name">
+                                </div>
+                                <div class="col-3 btn-save">
+                                    <button class="btn btn-success">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-9 input-details">
+                                    <label for="age">Age</label>
+                                    <input type="number" id="age" placeholder="30">
+                                </div>
+                                <div class="col-3 btn-save">
+                                    <button class="btn btn-success">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-9 input-details">
+                                    <label for="nationality">Nationality</label>
+                                    <input type="text" id="nationality" placeholder="Poland">
+                                </div>
+                                <div class="col-3 btn-save">
+                                    <button class="btn btn-success">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-9 input-details">
+                                    <label for="language">Languages</label>
+                                    <input type="text" id="language" placeholder="language">
+                                </div>
+                                <div class="col-3 btn-save">
+                                    <button class="btn btn-success">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-9 input-details">
+                                    <label for="address">Address</label>
+                                    <input type="text" id="address" placeholder="address">
+                                </div>
+                                <div class="col-3 btn-save">
+                                    <button class="btn btn-success">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+</div>
+{% endblock %}

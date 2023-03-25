@@ -32,3 +32,11 @@ def login_panel(request):
     """
     context = {"title": "Login Panel"}
     return render(request, "pages/login.html", context)
+
+
+def front_panel(request):
+    """
+    Front custom admin panel
+    """
+    context = {"title": "Hello Boss"}
+    return render(request, "pages/front-panel.html", context)

@@ -316,7 +316,8 @@ body {
     align-items: center;
 }
 
-#login-panel > input {
+#login-panel > input,
+.input-details > input {
     border:2px solid var(--light-grey);
     padding-left: 1rem;
 }
@@ -332,6 +333,42 @@ body {
     width: 10rem;
 }
 
+/* Custom front end panel */
+
+#input-details {
+    display: flex;
+    flex-direction: column;
+}
+
+#input-details > input {
+    width: 20rem;
+}
+
+.btn-save {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.btn-save > button {
+    width: 7rem;
+    height: 3.1rem;
+    margin-top: 3rem;
+}
+
+#myTab {
+    padding: 1rem 0 0 7.5rem;
+}
+
+.nav-tabs {
+    border-bottom: 1px solid var(--black);
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: var(--grey);
+    background-color: var(--white);
+    border-color: var(--black) var(--black) var(--white);
+}
 /* Small Devices */
 
 @media (max-width: 576px) {
