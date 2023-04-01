@@ -13,4 +13,27 @@ class Details(models.Model):
     address = models.CharField(max_length=200)
 
     def __str__(self):
-        return self.name
+        return str(self.full_name)
+
+
+class Skills(models.Model):
+    """
+    Database model for skills.
+    """
+    skill = models.CharField(max_length=200)
+
+    def __str__(self):
+        return str(self.skill)
+
+
+class Projects(models.Model):
+    """
+    Database model for projects.
+    """
+
+    title = models.CharField(max_length=200)
+    project_link = models.URLField(max_length=250)
+    project_description = models.TextField()
+
+    def __str__(self):
+        return str(self.title)
