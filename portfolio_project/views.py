@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.views.generic import TemplateView
 from .models import Details, Skills, Projects
@@ -17,9 +17,11 @@ def about_me(request):
     About me page
     """
     details = Details.objects.all()
+    skills = Skills.objects.all()
     context = {
         "details": details,
-        "title": "test 123"
+        "skills": skills,
+        "title": "About Me"
         }
     return render(request, "pages/about-me.html", context)
 
@@ -28,8 +30,9 @@ def projects(request):
     """
     Projects page
     """
-    context = {"title": "my Projects"}
+    context = {"title": "My Projects"}
     return render(request, "pages/projects.html", context)
+
 
 def login_panel(request):
     """
@@ -43,5 +46,10 @@ def front_panel(request):
     """
     Front custom admin panel
     """
+    if request.method == 'POST':
+        skill = request.POST.get('front_skill')
+        Skills.objects.create(skill=skill)
+
+        return redirect('about_me')
     context = {"title": "Hello Boss"}
     return render(request, "pages/front-panel.html", context)

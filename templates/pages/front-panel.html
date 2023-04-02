@@ -84,17 +84,16 @@
         </div>
     </div>
     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-        <form>
+        <form method="POST" action="">
+            {% csrf_token %}
             <div class="container">
                 <div class="row">
                     <div class="col-9 input-details">
-                        <label for="front-skills">Skills</label>
-                        <input type="text" id="front-skills" placeholder="Your skills">
+                        <label for="front-my-skills">Skills</label>
+                        <input type="text" id="front-my-skills" name="front_skill" placeholder="Your skills">
                     </div>
                     <div class="col-3 btn-skills">
-                        <button class="btn btn-secondary">Create</button>
-                        <button class="btn btn-success">Save</button>
-                        <button class="btn btn-danger">Delete</button>
+                        <button type="submit" class="btn btn-secondary">Create</button>
                     </div>
                 </div>
             </div>

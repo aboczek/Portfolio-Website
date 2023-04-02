@@ -28,7 +28,9 @@
         <div class="col">
             <h1 id="skills">Skills:</h1>
             <div id="skills-info">
-                <p>Lorem</p>
+                {% for skill in skills %}
+                <p>{{ skill.skill }}</p>
+                {% endfor %}
             </div>
         </div>
     </div>
