@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.generic import TemplateView
+from .models import Details, Skills, Projects
 
 # Create your views here.
 
@@ -15,7 +16,11 @@ def about_me(request):
     """
     About me page
     """
-    context = {"title": "test 123"}
+    details = Details.objects.all()
+    context = {
+        "details": details,
+        "title": "test 123"
+        }
     return render(request, "pages/about-me.html", context)
 
 

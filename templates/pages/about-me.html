@@ -13,11 +13,13 @@
             <p>Address:</p>
         </div>
         <div class="col-6" id="details-info-two">
-            <p>lorum</p>
-            <p>lorum</p>
-            <p>lorum</p>
-            <p>lorum</p>
-            <p>lorum</p>
+            {% for detail in details %}
+            <p>{{ detail.full_name }}</p>
+            <p>{{ detail.age }}</p>
+            <p>{{ detail.nationality }}</p>
+            <p>{{ detail.languages }}</p>
+            <p>{{ detail.address }}</p>
+            {% endfor %}
         </div>
     </div>
 </div>
