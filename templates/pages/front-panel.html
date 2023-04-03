@@ -98,6 +98,31 @@
                 </div>
             </div>
         </form>
+        <div>
+            <div class="container-lg">
+                <div class="row">
+                    <div class="col">
+                        <h1 id="skills">Skills:</h1>
+                        <div id="skills-info">
+                            <table>
+                                {% for skill in skills %}
+                                <tr>
+                                    <td>
+                                        <p>{{ skill.skill }}</p>
+                                    </td>
+                                    <td>
+                                        <a href="/edit/{{ skill.id }}">
+                                            <button>Edit</button>
+                                        </a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
         <form>

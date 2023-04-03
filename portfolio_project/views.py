@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from django.views.generic import TemplateView
 from .models import Details, Skills, Projects
@@ -51,5 +51,23 @@ def front_panel(request):
         Skills.objects.create(skill=skill)
 
         return redirect('about_me')
-    context = {"title": "Hello Boss"}
+
+    details = Details.objects.all()
+    skills = Skills.objects.all() 
+    context = {
+        "title": "Hello Boss",
+        "details": details,
+        "skills": skills
+        }
     return render(request, "pages/front-panel.html", context)
+
+def edit_skill(request, skill_id):
+    """
+    Editing skills in front panel.
+    """
+    skill = get_object_or_404(Skills, id=skill_id)
+    context = {
+        "title": "Lets Edit Boss"
+    }
+
+    return render(request, "pages/edit-skill.html", context)
