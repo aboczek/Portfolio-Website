@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.http import HttpResponse
-from django.views.generic import TemplateView
 from .models import Details, Skills, Projects
+from .forms import SkillsForm
 
 # Create your views here.
 
@@ -47,14 +46,17 @@ def front_panel(request):
     Front custom admin panel
     """
     if request.method == 'POST':
-        skill = request.POST.get('front_skill')
-        Skills.objects.create(skill=skill)
+        skills_form = SkillsForm(request.POST)
+        if skills_form.is_valid():
+            skills_form.save()
+            return redirect('about_me')
 
-        return redirect('about_me')
 
     details = Details.objects.all()
-    skills = Skills.objects.all() 
+    skills = Skills.objects.all()
+    skills_form = SkillsForm()
     context = {
+        "skills_form": skills_form,
         "title": "Hello Boss",
         "details": details,
         "skills": skills
@@ -66,7 +68,14 @@ def edit_skill(request, skill_id):
     Editing skills in front panel.
     """
     skill = get_object_or_404(Skills, id=skill_id)
+    if request.method == 'POST':
+        skills_form = SkillsForm(request.POST, instance=skill)
+        if skills_form.is_valid():
+            skills_form.save()
+            return redirect('about_me')
+    edit_form = SkillsForm(instance=skill)
     context = {
+        "edit_form": edit_form,
         "title": "Lets Edit Boss"
     }
 

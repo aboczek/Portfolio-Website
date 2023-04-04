@@ -2,19 +2,17 @@
 
 {% block template %}
 
-<form action="POST">
+<form method="POST">
     {% csrf_token %}
     <div class="container">
         <h1>Edit my skills.</h1>
         <div class="row">
             <div class="column">
-                <div>
-                    <label for="edit_skill">Edit</label>
-                    <input type="text" id="edit_skill" name="edit_skill">
-                </div>
+                {{ edit_form }}
                 <div>
                     <button type="submit">Update</button>
                 </div>
+
             </div>
         </div>
     </div>
