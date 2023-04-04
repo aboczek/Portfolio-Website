@@ -24,4 +24,15 @@ class DetailsForm(forms.ModelForm):
         """
         model = Details
         fields = ['full_name', 'age', 'nationality', 'languages', 'address']
-        
+
+
+class ProjectsForm(forms.ModelForm):
+    """
+    Projects Form.
+    """
+    class Meta:
+        """
+        Meta for details form.
+        """
+        model = Projects
+        fields = ['title', 'project_link', 'project_description']
