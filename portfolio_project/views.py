@@ -13,7 +13,7 @@ def home(request):
 
 def about_me(request):
     """
-    About me page
+    About me page.
     """
     details = Details.objects.all()
     skills = Skills.objects.all()
@@ -27,7 +27,7 @@ def about_me(request):
 
 def projects(request):
     """
-    Projects page
+    Projects page.
     """
     context = {"title": "My Projects"}
     return render(request, "pages/projects.html", context)
@@ -43,7 +43,7 @@ def login_panel(request):
 
 def front_panel(request):
     """
-    Front custom admin panel
+    Front custom admin panel.
     """
     if request.method == 'POST':
         skills_form = SkillsForm(request.POST)
@@ -80,3 +80,12 @@ def edit_skill(request, skill_id):
     }
 
     return render(request, "pages/edit-skill.html", context)
+
+
+def delete_skill(skill_id):
+    """
+    Deleting skills in front panel.
+    """
+    skill = get_object_or_404(Skills, id=skill_id)
+    skill.delete()
+    return redirect("front_panel")

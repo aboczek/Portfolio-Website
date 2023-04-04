@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
 from django.conf.urls.static import static
 from django.conf import settings
 from portfolio_project import views
@@ -29,4 +29,5 @@ urlpatterns = [
     path('login/', views.login_panel, name="login_panel"),
     path('front/', views.front_panel, name="front_panel"),
     path('edit/<skill_id>', views.edit_skill, name='edit'),
+    path('delete/<skill_id>', views.delete_skill, name='delete'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
