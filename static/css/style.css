@@ -380,3 +380,10 @@ body {
     background-color: var(--white);
     border-color: var(--black) var(--black) var(--white);
 }
+
+.details-table {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

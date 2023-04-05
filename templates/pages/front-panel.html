@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 
 {% block template %}
-<h1 id="details">Details about me</h1>
 
 <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item" role="presentation">
@@ -19,66 +18,43 @@
 </ul>
 <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-        <div class="container">
+        <div class="container-lg">
             <div class="row">
                 <div class="col">
-                    <form>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-9 input-details">
-                                    <label for="full-name">Full name</label>
-                                    <input type="text" id="full-name" placeholder="Your name">
-                                </div>
-                                <div class="col-3 btn-save">
-                                    <button class="btn btn-success">Save</button>
-                                </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <h1 id="details">Details:</h1>
+                                <table class="details-table">
+                                    {% for detail in details %}
+                                    <tr class="details-table">
+                                        <td>
+                                            {{ detail.full_name }}
+                                        </td>
+                                        <td>
+                                            {{ detail.age }}
+                                        </td>
+                                        <td>
+                                            {{ detail.nationality }}
+                                        </td>
+                                        <td>
+                                            {{ detail.languages }}
+                                        </td>
+                                        <td>
+                                            {{ detail.address }}
+                                        </td>
+                                        <td>
+                                            <a href="/edit-detail/{{ detail.id }}">
+                                                <button>Edit</button>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </table>
                             </div>
                         </div>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-9 input-details">
-                                    <label for="age">Age</label>
-                                    <input type="number" id="age" placeholder="30">
-                                </div>
-                                <div class="col-3 btn-save">
-                                    <button class="btn btn-success">Save</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-9 input-details">
-                                    <label for="nationality">Nationality</label>
-                                    <input type="text" id="nationality" placeholder="Poland">
-                                </div>
-                                <div class="col-3 btn-save">
-                                    <button class="btn btn-success">Save</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-9 input-details">
-                                    <label for="language">Languages</label>
-                                    <input type="text" id="language" placeholder="language">
-                                </div>
-                                <div class="col-3 btn-save">
-                                    <button class="btn btn-success">Save</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-9 input-details">
-                                    <label for="address">Address</label>
-                                    <input type="text" id="address" placeholder="address">
-                                </div>
-                                <div class="col-3 btn-save">
-                                    <button class="btn btn-success">Save</button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -110,12 +86,12 @@
                                         <p>{{ skill.skill }}</p>
                                     </td>
                                     <td>
-                                        <a href="/edit/{{ skill.id }}">
+                                        <a href="/edit-skill/{{ skill.id }}">
                                             <button>Edit</button>
                                         </a>
                                     </td>
                                     <td>
-                                        <a href="/delete/{{ skill.id }}">
+                                        <a href="/delete-skill/{{ skill.id }}">
                                             <button>Delete</button>
                                         </a>
                                     </td>

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block template %}
+
+<form method="POST">
+    {% csrf_token %}
+    <div class="container">
+        <h1>Edit my details.</h1>
+        <div class="row">
+            <div class="column">
+                {{ details_form }}
+                <div>
+                    <button type="submit">Update</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>
+
+{% endblock %}

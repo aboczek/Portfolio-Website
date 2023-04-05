@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Details, Skills, Projects
-from .forms import SkillsForm
+from .forms import SkillsForm, DetailsForm, ProjectsForm
 
 # Create your views here.
 
@@ -72,7 +72,7 @@ def edit_skill(request, skill_id):
         skills_form = SkillsForm(request.POST, instance=skill)
         if skills_form.is_valid():
             skills_form.save()
-            return redirect('about_me')
+            return redirect('front_panel')
     edit_form = SkillsForm(instance=skill)
     context = {
         "edit_form": edit_form,
@@ -89,3 +89,22 @@ def delete_skill(skill_id):
     skill = get_object_or_404(Skills, id=skill_id)
     skill.delete()
     return redirect("front_panel")
+
+
+def edit_detail(request, detail_id):
+    """
+    Editing details in front panel.
+    """
+    detail = get_object_or_404(Details, id=detail_id)
+    if request.method == 'POST':
+        details_form = DetailsForm(request.POST, instance=detail)
+        if details_form.is_valid():
+            details_form.save()
+            return redirect('front_panel')
+    details_form = DetailsForm(instance=detail)
+    context = {
+        "details_form": details_form,
+        "title": "Lets Edit Boss"
+    }
+
+    return render(request, "pages/edit-detail.html", context)
