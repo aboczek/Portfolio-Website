@@ -108,3 +108,4 @@ def edit_detail(request, detail_id):
     }
 
     return render(request, "pages/edit-detail.html", context)
+    
