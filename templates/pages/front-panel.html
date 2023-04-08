@@ -105,20 +105,15 @@
         </div>
     </div>
     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-        <form>
+        <form method="POST">
+            {% csrf_token %}
             <div class="container">
                 <div class="row">
                     <div class="col-9 input-details">
-                        <label for="front-project-name">Project</label>
-                        <input type="text" id="front-project-name" placeholder="Project name">
-                        <label for="front-project-name">Link</label>
-                        <input type="url" id="front-project-name" placeholder="Link">
+                        {{ projects_form }}
                     </div>
                     <div class="col-3 btn-skills">
-                        <button class="btn btn-secondary">Create</button>
-                        <button class="btn btn-success">Save</button>
-                        <button class="btn btn-danger">Delete</button>
-                    </div>
+                        <button class="btn btn-secondary" type="submit">Create</button>
                 </div>
             </div>
         </form>

@@ -317,7 +317,8 @@ body {
 }
 
 #login-panel > input,
-.input-details > input {
+.input-details > input,
+#id_project_description {
     border:2px solid var(--light-grey);
     padding-left: 1rem;
 }

@@ -54,13 +54,21 @@ def front_panel(request):
         if skills_form.is_valid():
             skills_form.save()
             return redirect('about_me')
+    
+    if request.method == 'POST':
+        projects_form = ProjectsForm(request.POST)
+        if projects_form.is_valid():
+            projects_form.save()
+            return redirect('about_me')
 
     my_projects = Projects.objects.all()
+    projects_form = ProjectsForm()
     details = Details.objects.all()
     skills = Skills.objects.all()
     skills_form = SkillsForm()
     context = {
         "my_projects": my_projects,
+        "projects_form": projects_form,
         "skills_form": skills_form,
         "details": details,
         "skills": skills,
@@ -87,7 +95,7 @@ def edit_skill(request, skill_id):
     return render(request, "pages/edit-skill.html", context)
 
 
-def delete_skill(skill_id):
+def delete_skill(request, skill_id):
     """
     Deleting skills in front panel.
     """
