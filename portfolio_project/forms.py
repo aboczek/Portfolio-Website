@@ -35,4 +35,4 @@ class ProjectsForm(forms.ModelForm):
         Meta for details form.
         """
         model = Projects
-        fields = ['title', 'project_link', 'project_description']
+        fields = ['title', 'project_link', 'project_description', 'project_image']

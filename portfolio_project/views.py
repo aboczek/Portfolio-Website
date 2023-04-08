@@ -60,6 +60,7 @@ def front_panel(request):
     skills = Skills.objects.all()
     skills_form = SkillsForm()
     context = {
+        "my_projects": my_projects,
         "skills_form": skills_form,
         "details": details,
         "skills": skills,
