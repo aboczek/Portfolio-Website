@@ -4,10 +4,18 @@
 
 <h1 id="projects">My Projects:</h1>
 <div>
+    {% for project in my_projects %}
     <ul id="project-description">
-        <li>Project Lorem</li>
-        <li>Project Description lorem</li>
+        <li>{{ project.title }}</li>
+        <a href="{{ project.project_link }}" target="_blank">Link</a>
+        <li>{{ project.project_description }}</li>
+        {% if "placeholder" in project.project_image.url %}
+        <img src="https://res.cloudinary.com/dlulmj5uy/image/upload/v1680977915/placeholder_ful0ga.png" alt="placeholder" width="30%">
+        {% else %}
+        <img src="{{ project.project_image.url }}" alt="test">
+        {% endif %}
     </ul>
+    {% endfor %}
 </div>
 
 {% endblock %}

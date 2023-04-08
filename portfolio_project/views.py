@@ -29,7 +29,11 @@ def projects(request):
     """
     Projects page.
     """
-    context = {"title": "My Projects"}
+    my_projects = Projects.objects.all()
+    context = {
+        "title": "My Projects",
+        "my_projects": my_projects,
+    }
     return render(request, "pages/projects.html", context)
 
 
@@ -51,15 +55,15 @@ def front_panel(request):
             skills_form.save()
             return redirect('about_me')
 
-
+    my_projects = Projects.objects.all()
     details = Details.objects.all()
     skills = Skills.objects.all()
     skills_form = SkillsForm()
     context = {
         "skills_form": skills_form,
-        "title": "Hello Boss",
         "details": details,
-        "skills": skills
+        "skills": skills,
+        "title": "Hello Boss",
         }
     return render(request, "pages/front-panel.html", context)
 
@@ -108,4 +112,3 @@ def edit_detail(request, detail_id):
     }
 
     return render(request, "pages/edit-detail.html", context)
-    
