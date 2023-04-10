@@ -2,19 +2,19 @@
 
 {% block template %}
 
-<form method="POST">
-    {% csrf_token %}
-    <div class="container">
-        <h1>Edit my skills.</h1>
-        <div class="row">
-            <div class="column">
-                {{ edit_form }}
+<div class="container-lg">
+    <div class="row">
+        <div class="col">
+            <form method="POST" class="edit">
+                {% csrf_token %}
+                <h1>Edit my skills.</h1>
+                {{ edit_skills_form }}
                 <div>
-                    <button type="submit">Update</button>
+                    <button type="submit" class="btn btn-primary">Update</button>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
-</form>
+</div>
 
 {% endblock %}

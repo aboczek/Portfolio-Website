@@ -413,6 +413,21 @@ body {
     font-size: 1.5rem;
 }
 
+.edit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit button {
+    margin-top: 1rem;
+    width:7rem;
+    font-size: 1.5rem;
+}
+
+/* bootstrap */
+
 #myTab {
     padding: 1rem 0 0 7.5rem;
 }

@@ -93,9 +93,9 @@ def edit_skill(request, skill_id):
         if skills_form.is_valid():
             skills_form.save()
             return redirect('front_panel')
-    edit_form = SkillsForm(instance=skill)
+    edit_skills_form = SkillsForm(instance=skill)
     context = {
-        "edit_form": edit_form,
+        "edit_skills_form": edit_skills_form,
         "title": "Lets Edit Boss"
     }
 
