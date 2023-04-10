@@ -18,6 +18,25 @@
 </ul>
 <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <form method="POST">
+            {% csrf_token %}
+            <div class="container-lg">
+                <div class="row">
+                    <div class="col">
+                        <table id="input-skills">
+                            <tr>
+                                <td>
+                                    {{ details_form }}
+                                </td>
+                                <td class="btn-skills">
+                                    <button type="submit" class="btn btn-success">Create</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </form>
         <div class="container-lg">
             <div class="row">
                 <div class="col">
@@ -41,8 +60,11 @@
                                 {{ detail.address }}
                             </td>
                             <td>
-                                <a href="/edit-detail/{{ detail.id }}">
+                                <a href="/edit-detail/{{ detail.id }}" class="btn-skills">
                                     <button class="btn btn-info">Edit</button>
+                                </a>
+                                <a href="/edit-delete/{{ detail.id }}" class="btn-skills">
+                                    <button class="btn btn-danger">Delete</button>
                                 </a>
                             </td>
                         </tr>
@@ -55,7 +77,7 @@
     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
         <form method="POST">
             {% csrf_token %}
-            <div class="container">
+            <div class="container-lg">
                 <div class="row">
                     <div class="col">
                         <table id="input-skills">

@@ -10,9 +10,9 @@
         <a href="{{ project.project_link }}" target="_blank">Link</a>
         <li>{{ project.project_description }}</li>
         {% if "placeholder" in project.project_image.url %}
-        <img src="https://res.cloudinary.com/dlulmj5uy/image/upload/v1680977915/placeholder_ful0ga.png" alt="placeholder" width="30%">
+        <img src="https://res.cloudinary.com/dlulmj5uy/image/upload/v1680977915/placeholder_ful0ga.png" alt="placeholder" width="20%">
         {% else %}
-        <img src="{{ project.project_image.url }}" alt="test">
+        <img src="{{ project.project_image.url }}" alt="test" width="30%">
         {% endif %}
     </ul>
     {% endfor %}

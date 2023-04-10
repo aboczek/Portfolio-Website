@@ -50,6 +50,11 @@ def front_panel(request):
     Front custom admin panel.
     """
     if request.method == 'POST':
+        details_form = DetailsForm(request.POST)
+        if details_form.is_valid():
+            details_form.save()
+            return redirect('front_panel')
+    if request.method == 'POST':
         skills_form = SkillsForm(request.POST)
         if skills_form.is_valid():
             skills_form.save()
@@ -60,17 +65,20 @@ def front_panel(request):
             projects_form.save()
             return redirect('front_panel')
 
-    my_projects = Projects.objects.all()
-    projects_form = ProjectsForm()
     details = Details.objects.all()
+    details_form = DetailsForm()
     skills = Skills.objects.all()
     skills_form = SkillsForm()
+    my_projects = Projects.objects.all()
+    projects_form = ProjectsForm()
+
     context = {
+        "details": details,
+        "details_form": details_form,
+        "skills_form": skills_form,
+        "skills": skills,
         "my_projects": my_projects,
         "projects_form": projects_form,
-        "skills_form": skills_form,
-        "details": details,
-        "skills": skills,
         "title": "Hello Boss",
         }
     return render(request, "pages/front-panel.html", context)
@@ -121,6 +129,13 @@ def edit_detail(request, detail_id):
 
     return render(request, "pages/edit-detail.html", context)
 
+def delete_detail(request, detail_id):
+    """
+    Deleting details in front panel.
+    """
+    detail = get_object_or_404(Details(), id=detail_id)
+    detail.delete()
+    return redirect("front_panel")
 
 def edit_project(request, project_id):
     """
