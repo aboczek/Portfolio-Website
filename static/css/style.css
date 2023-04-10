@@ -317,8 +317,10 @@ body {
 }
 
 #login-panel > input,
-.input-details > input,
-#id_project_description {
+#id_project_description,    /* front panel project description */
+#id_project_link,           /* front panel project link */
+#id_title,                  /* front panel title */
+#id_skill {                 /* front panel skills */
     border:2px solid var(--light-grey);
     padding-left: 1rem;
 }
@@ -341,21 +343,28 @@ body {
     flex-direction: column;
 }
 
-#input-details > input {
-    width: 20rem;
-}
-
-.btn-save {
+#id_project_link {
     display: flex;
-    justify-content: flex-start;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.btn-save > button {
-    width: 7rem;
-    height: 3.1rem;
-    margin-top: 3rem;
-    font-size: 1.5rem;
+#projects-form,
+#project-padding {
+    padding-top: 2rem;
+}
+
+#project-preview > #text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#border-project {
+    border-left: 2px var(--grey) dotted;
+    padding-left: 3rem;
 }
 
 .btn-skills {

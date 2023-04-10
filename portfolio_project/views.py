@@ -54,7 +54,6 @@ def front_panel(request):
         if skills_form.is_valid():
             skills_form.save()
             return redirect('about_me')
-    
     if request.method == 'POST':
         projects_form = ProjectsForm(request.POST)
         if projects_form.is_valid():
@@ -121,3 +120,22 @@ def edit_detail(request, detail_id):
     }
 
     return render(request, "pages/edit-detail.html", context)
+
+
+def edit_project(request, project_id):
+    """
+    Editing projects in front panel.
+    """
+    project = get_object_or_404(Projects, id=project_id)
+    if request.method == 'POST':
+        projects_form = ProjectsForm(request.POST, instance=project)
+        if projects_form.is_valid():
+            projects_form.save()
+            return redirect('front_panel')
+    edit_projects_form = ProjectsForm(instance=project)
+    context = {
+        "edit_projects_form": edit_projects_form,
+        "title": "Lets Edit Boss"
+    }
+
+    return render(request, "pages/edit-project.html", context)

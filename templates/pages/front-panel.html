@@ -105,18 +105,60 @@
         </div>
     </div>
     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-        <form method="POST">
-            {% csrf_token %}
-            <div class="container">
-                <div class="row">
-                    <div class="col-9 input-details">
-                        {{ projects_form }}
-                    </div>
-                    <div class="col-3 btn-skills">
-                        <button class="btn btn-secondary" type="submit">Create</button>
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <form method="POST" id="projects-form">
+                        {% csrf_token %}
+                        <table>
+                            <tr>
+                                <td>
+                                    {{ projects_form }}
+                                </td>
+                                <td>
+                                    <div class="btn-skills">
+                                        <button class="btn btn-secondary" type="submit">Create</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
                 </div>
+                <div class="col-6" id="border-project">
+                    {% for project in my_projects %}
+                    <table>
+                        <tr>
+                            <td id="project-preview">
+                                <ul>
+                                    <li id="project-padding">
+                                        {{ project.title }}
+                                    </li>
+                                    <li>
+                                        <a href="{{ project.project_link }}" target="_blank">{{ project.project_link }}</a>
+                                    </li>
+                                    <li>
+                                        <p>{{ project.project_description }}</p>
+                                    </li>
+                                    <li>
+                                        {% if "placeholder" in project.project_image.url %}
+                                        <img src="https://res.cloudinary.com/dlulmj5uy/image/upload/v1680977915/placeholder_ful0ga.png"
+                                            alt="placeholder" width="30%">
+                                        {% else %}
+                                        <img src="{{ project.project_image.url }}" alt="test">
+                                        {% endif %}
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <a href="/edit-project/{{ project.id }}">
+                                    <button>Edit</button>
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                    {% endfor %}
             </div>
-        </form>
+            </div>
+        </div>
     </div>
-</div>
-{% endblock %}
+    {% endblock %}
