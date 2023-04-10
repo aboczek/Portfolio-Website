@@ -21,54 +21,53 @@
         <div class="container-lg">
             <div class="row">
                 <div class="col">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col">
-                                <h1 id="details">Details:</h1>
-                                <table class="details-table">
-                                    {% for detail in details %}
-                                    <tr class="details-table">
-                                        <td>
-                                            {{ detail.full_name }}
-                                        </td>
-                                        <td>
-                                            {{ detail.age }}
-                                        </td>
-                                        <td>
-                                            {{ detail.nationality }}
-                                        </td>
-                                        <td>
-                                            {{ detail.languages }}
-                                        </td>
-                                        <td>
-                                            {{ detail.address }}
-                                        </td>
-                                        <td>
-                                            <a href="/edit-detail/{{ detail.id }}">
-                                                <button>Edit</button>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    {% endfor %}
-                                </table>
-                            </div>
-                        </div>
-
-                    </div>
+                    <h1 id="details">Details:</h1>
+                    <table class="details-table">
+                        {% for detail in details %}
+                        <tr class="details-table">
+                            <td>
+                                {{ detail.full_name }}
+                            </td>
+                            <td>
+                                {{ detail.age }}
+                            </td>
+                            <td>
+                                {{ detail.nationality }}
+                            </td>
+                            <td>
+                                {{ detail.languages }}
+                            </td>
+                            <td>
+                                {{ detail.address }}
+                            </td>
+                            <td>
+                                <a href="/edit-detail/{{ detail.id }}">
+                                    <button class="btn btn-info">Edit</button>
+                                </a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </table>
                 </div>
             </div>
         </div>
     </div>
     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-        <form method="POST" action="">
+        <form method="POST">
             {% csrf_token %}
             <div class="container">
                 <div class="row">
-                    <div class="col-9 input-details">
-                        {{ skills_form }}
-                    </div>
-                    <div class="col-3 btn-skills">
-                        <button type="submit" class="btn btn-secondary">Create</button>
+                    <div class="col">
+                        <table id="input-skills">
+                            <tr>
+                                <td>
+                                    {{ skills_form }}
+                                </td>
+                                <td class="btn-skills">
+                                    <button type="submit" class="btn btn-success">Create</button>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -78,7 +77,7 @@
                 <div class="row">
                     <div class="col">
                         <h1 id="skills">Skills:</h1>
-                        <div id="skills-info">
+                        <div id="skills-info-panel">
                             <table>
                                 {% for skill in skills %}
                                 <tr>
@@ -86,13 +85,13 @@
                                         <p>{{ skill.skill }}</p>
                                     </td>
                                     <td>
-                                        <a href="/edit-skill/{{ skill.id }}">
-                                            <button>Edit</button>
+                                        <a href="/edit-skill/{{ skill.id }}" class="btn-skills btn-padding">
+                                            <button class="btn btn-info">Edit</button>
                                         </a>
                                     </td>
                                     <td>
-                                        <a href="/delete-skill/{{ skill.id }}">
-                                            <button>Delete</button>
+                                        <a href="/delete-skill/{{ skill.id }}" class="btn-skills btn-padding">
+                                            <button class="btn btn-danger">Delete</button>
                                         </a>
                                     </td>
                                 </tr>
@@ -105,7 +104,7 @@
         </div>
     </div>
     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-        <div class="container">
+        <div class="container-lg">
             <div class="row">
                 <div class="col-6">
                     <form method="POST" id="projects-form">
@@ -117,7 +116,7 @@
                                 </td>
                                 <td>
                                     <div class="btn-skills">
-                                        <button class="btn btn-secondary" type="submit">Create</button>
+                                        <button class="btn btn-success" type="submit">Create</button>
                                     </div>
                                 </td>
                             </tr>
@@ -134,7 +133,8 @@
                                         {{ project.title }}
                                     </li>
                                     <li>
-                                        <a href="{{ project.project_link }}" target="_blank">{{ project.project_link }}</a>
+                                        <a href="{{ project.project_link }}"
+                                            target="_blank" class="btn-skills">{{ project.project_link }}</a>
                                     </li>
                                     <li>
                                         <p>{{ project.project_description }}</p>
@@ -150,14 +150,19 @@
                                 </ul>
                             </td>
                             <td>
-                                <a href="/edit-project/{{ project.id }}">
-                                    <button>Edit</button>
+                                <a href="/edit-project/{{ project.id }}" class="btn-skills" aria-label="edit project">
+                                    <button class="btn btn-info">Edit</button>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="/delete-project/{{ project.id }}" aria-label="delete project" class="btn-skills btn-padding">
+                                    <button class="btn btn-danger">Delete</button>
                                 </a>
                             </td>
                         </tr>
                     </table>
                     {% endfor %}
-            </div>
+                </div>
             </div>
         </div>
     </div>

@@ -53,12 +53,12 @@ def front_panel(request):
         skills_form = SkillsForm(request.POST)
         if skills_form.is_valid():
             skills_form.save()
-            return redirect('about_me')
+            return redirect('front_panel')
     if request.method == 'POST':
         projects_form = ProjectsForm(request.POST)
         if projects_form.is_valid():
             projects_form.save()
-            return redirect('about_me')
+            return redirect('front_panel')
 
     my_projects = Projects.objects.all()
     projects_form = ProjectsForm()
@@ -139,3 +139,12 @@ def edit_project(request, project_id):
     }
 
     return render(request, "pages/edit-project.html", context)
+
+
+def delete_project(request, project_id):
+    """
+    Deleting project in front panel.
+    """
+    project = get_object_or_404(Projects, id=project_id)
+    project.delete()
+    return redirect("front_panel")

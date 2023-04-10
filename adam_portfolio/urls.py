@@ -32,4 +32,5 @@ urlpatterns = [
     path('delete-skill/<skill_id>', views.delete_skill, name='delete'),
     path('edit-detail/<detail_id>', views.edit_detail, name='edit_detail'),
     path('edit-project/<project_id>', views.edit_project, name='edit_project'),
+    path('delete-project/<project_id>', views.delete_project, name='delete_project'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

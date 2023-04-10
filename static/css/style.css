@@ -338,10 +338,35 @@ body {
 
 /* Custom front end panel */
 
-#input-details {
+#input-details td {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
+#input-skills {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2rem;
+}
+
+#skills-info-panel {
+    display: flex;
+    justify-content: flex-start;
+    width: 35rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#skills-info-panel p {
+    margin-top: 1rem;
+    padding: 1rem 2rem 0 0;
+
+}
+
 
 #id_project_link {
     display: flex;
@@ -365,6 +390,10 @@ body {
 #border-project {
     border-left: 2px var(--grey) dotted;
     padding-left: 3rem;
+}
+
+.btn-padding {
+    padding-left: 1rem;
 }
 
 .btn-skills {
