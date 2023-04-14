@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
 
 urlpatterns = [
@@ -13,4 +13,5 @@ urlpatterns = [
     path('delete-detail/<detail_id>', views.delete_detail, name='delete_detail'),
     path('edit-project/<project_id>', views.edit_project, name='edit_project'),
     path('delete-project/<project_id>', views.delete_project, name='delete_project'),
+    path('accounts/', include('allauth.urls')),
 ]

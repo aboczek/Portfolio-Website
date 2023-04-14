@@ -49,28 +49,30 @@ def front_panel(request):
     """
     Front custom admin panel.
     """
-    if request.method == 'POST':
-        details_form = DetailsForm(request.POST)
-        if details_form.is_valid():
-            details_form.save()
-            return redirect('front_panel')
-    if request.method == 'POST':
-        skills_form = SkillsForm(request.POST)
-        if skills_form.is_valid():
-            skills_form.save()
-            return redirect('front_panel')
-    if request.method == 'POST':
-        projects_form = ProjectsForm(request.POST)
-        if projects_form.is_valid():
-            projects_form.save()
-            return redirect('front_panel')
-
     details = Details.objects.all()
     details_form = DetailsForm()
     skills = Skills.objects.all()
     skills_form = SkillsForm()
     my_projects = Projects.objects.all()
     projects_form = ProjectsForm()
+
+    if request.method == 'POST':
+        details_form = DetailsForm(request.POST)
+        if details_form.is_valid():
+            details_form.save()
+            return redirect('front_panel')
+
+    if request.method == 'POST':
+        skills_form = SkillsForm(request.POST)
+        if skills_form.is_valid():
+            skills_form.save()
+            return redirect('front_panel')
+
+    if request.method == 'POST':
+        projects_form = ProjectsForm(request.POST, request.FILES)
+        if projects_form.is_valid():
+            projects_form.save()
+            return redirect('front_panel')
 
     context = {
         "details": details,
@@ -133,7 +135,7 @@ def delete_detail(request, detail_id):
     """
     Deleting details in front panel.
     """
-    detail = get_object_or_404(Details(), id=detail_id)
+    detail = get_object_or_404(Details, id=detail_id)
     detail.delete()
     return redirect("front_panel")
 
@@ -143,7 +145,7 @@ def edit_project(request, project_id):
     """
     project = get_object_or_404(Projects, id=project_id)
     if request.method == 'POST':
-        projects_form = ProjectsForm(request.POST, instance=project)
+        projects_form = ProjectsForm(request.POST, request.FILES, instance=project)
         if projects_form.is_valid():
             projects_form.save()
             return redirect('front_panel')
@@ -154,7 +156,6 @@ def edit_project(request, project_id):
     }
 
     return render(request, "pages/edit-project.html", context)
-
 
 def delete_project(request, project_id):
     """
