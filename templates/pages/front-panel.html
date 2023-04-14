@@ -2,6 +2,7 @@
 
 {% block template %}
 {% if user.is_authenticated %}
+{% if request.user.is_staff %}
 <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item" role="presentation">
         <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
@@ -202,5 +203,9 @@
             </div>
         </div>
     </div>
+    {% else %}
+    <!-- redirect button if unwanted user creates account -->
+    <a href="{% url 'home' %}" id="redirection" class="btn-skills"><button class="btn btn-danger">Go back</button></a>
+    {% endif %}
     {% endif %}
     {% endblock %}

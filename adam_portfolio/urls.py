@@ -34,5 +34,4 @@ urlpatterns = [
     path('edit-project/<project_id>', views.edit_project, name='edit_project'),
     path('delete-project/<project_id>', views.delete_project, name='delete_project'),
     path('accounts/', include('allauth.urls')),
-    # path('register/', redirect_view, name='redirect'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -8,7 +8,10 @@ def home(request):
     """
     home page
     """
-    return render(request, "pages/index.html")
+    context = {
+        "title": "Home"
+    }
+    return render(request, "pages/index.html", context)
 
 
 def about_me(request):
