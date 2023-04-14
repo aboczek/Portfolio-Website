@@ -13,6 +13,7 @@
     --green: #00c00a;
     --grey: #333;
     --light-grey: #868686;
+    --red: #ff0000;
 
     --bar-width: 4.5rem;
     --bar-height: 0.8rem;
@@ -303,7 +304,7 @@ body {
     padding-top: 4rem;
 }
 
-/* Login panel */
+/* Login panel and log out */
 
 #login-text,
 #login-panel,
@@ -314,6 +315,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 10rem auto auto auto;
+    width: 30%;
 }
 
 #login-panel > input,
@@ -325,10 +328,16 @@ body {
 #id_age,                    /* front panel age */
 #id_nationality,            /* front panel nationality */
 #id_languages,              /* front panel languages */
-#id_address {               /* front panel skills */
+#id_address,                /* front panel address */
+#id_login,                  /* allauth login */
+#id_password {              /* allauth password */
     border:2px solid var(--light-grey);
     padding-left: 1rem;
     margin-left: 1rem;
+}
+
+input#id_password {
+    margin-left: 1.45rem;
 }
 
 #login-label {
@@ -340,6 +349,22 @@ body {
     margin: 2rem;
     padding: 1rem;
     width: 10rem;
+}
+
+.logout-text-one {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10rem;
+}
+
+.logout-text-two,
+#logout-layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Custom front end panel */
@@ -424,6 +449,15 @@ body {
     margin-top: 1rem;
     width:7rem;
     font-size: 1.5rem;
+}
+
+#logout-button {
+    margin: 0.6rem 0 0 2px;
+}
+
+#logout-button > a {
+    text-decoration: none;
+    color: var(--red);
 }
 
 /* bootstrap */
