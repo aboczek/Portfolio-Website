@@ -117,3 +117,42 @@ class TestViews(TestCase):
         self.assertRedirects(response, '/front/')
         existing_projects = Projects.objects.filter(id=project.id)
         self.assertEqual(len(existing_projects), 0)
+
+    def test_can_edit_details(self):
+        """
+        Test if can edit details is working.
+        """
+        detail = Details.objects.create(full_name='Test', age='900', nationality='poland', languages='polish', address='ireland')
+        response = self.client.post(f'/edit-detail/{detail.id}', {'full_name': 'Test edit',
+                                                                  'age': '900',
+                                                                  'nationality': 'poland',
+                                                                  'languages': 'polish',
+                                                                  'address': 'ireland'})
+        self.assertRedirects(response, '/front/')
+        updated_detail = Details.objects.get(id=detail.id)
+        self.assertEqual(updated_detail.full_name, 'Test edit')
+
+    def test_can_edit_skills(self):
+        """
+        Test if can edit skills is working.
+        """
+        skill = Skills.objects.create(skill='Test')
+        response = self.client.post(f'/edit-skill/{skill.id}', {'skill': 'Test edit'})
+        self.assertRedirects(response, '/front/')
+        updated_skill = Skills.objects.get(id=skill.id)
+        self.assertEqual(updated_skill.skill, 'Test edit')
+
+    def test_can_edit_project(self):
+        """
+        Test if can edit projects is working.
+        """
+        project = Projects.objects.create(title='test', project_link='https://www.google.com/', project_description='testing', project_image='placeholder')
+        response = self.client.post(f'/edit-project/{project.id}',
+                                                    {'title': 'Title edit',
+                                                     'project_link': 'https://www.google.com/',
+                                                     'project_description': 'testing',
+                                                     'project_image': 'placeholder'})
+        self.assertRedirects(response, '/front/')
+        updated_project = Projects.objects.get(id=project.id)
+        self.assertEqual(updated_project.title, 'Title edit')
+        
