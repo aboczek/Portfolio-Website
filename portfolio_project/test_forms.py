@@ -3,7 +3,7 @@ from .forms import SkillsForm, DetailsForm, ProjectsForm
 
 class TestSkillsForm(TestCase):
     """
-    Test Case for forms
+    Test Case for forms.
     """
     def test_skill_is_required(self):
         """
@@ -16,7 +16,7 @@ class TestSkillsForm(TestCase):
 
     def test_detail_is_required(self):
         """
-        Testing if detail is required
+        Testing if detail is required.
         """
         form = DetailsForm({'full_name': '',
                             'age': '',
