@@ -39,12 +39,12 @@ def projects(request):
     return render(request, "pages/projects.html", context)
 
 
-def login_panel(request):
-    """
-    Login panel
-    """
-    context = {"title": "Login Panel"}
-    return render(request, "pages/login.html", context)
+# def login_panel(request):
+#     """
+#     Login panel
+#     """
+#     context = {"title": "Login Panel"}
+#     return render(request, "pages/login.html", context)
 
 
 def front_panel(request):

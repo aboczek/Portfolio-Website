@@ -41,7 +41,11 @@ class TestViews(TestCase):
         """
         Test if edit details is up and running.
         """
-        detail = Details.objects.create(full_name='Test', age='900', nationality='poland', languages='polish', address='ireland')
+        detail = Details.objects.create(full_name='Test',
+                                        age='900',
+                                        nationality='poland',
+                                        languages='polish',
+                                        address='ireland')
         response = self.client.get(f'/edit-detail/{detail.id}')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'pages/edit-detail.html')
@@ -59,7 +63,10 @@ class TestViews(TestCase):
         """
         Test if edit projects is up and running.
         """
-        project = Projects.objects.create(title='test', project_link='https://www.google.com/', project_description='testing', project_image='placeholder')
+        project = Projects.objects.create(title='test',
+                                          project_link='https://www.google.com/',
+                                          project_description='testing',
+                                          project_image='placeholder')
         response = self.client.get(f'/edit-project/{project.id}')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'pages/edit-project.html')
@@ -68,14 +75,23 @@ class TestViews(TestCase):
         """
         Test if add details is working.
         """
-        response = self.client.post('/front/', {'full_name':'Test', 'age': '900', 'nationality': 'poland', 'languages': 'polish', 'address': 'ireland'})
+        response = self.client.post('/front/',
+                                   {'full_name':'Test',
+                                    'age': '900',
+                                    'nationality': 'poland', 
+                                    'languages': 'polish', 
+                                    'address': 'ireland'})
         self.assertRedirects(response, '/front/')
 
     def test_can_delete_details(self):
         """
         Test if delete details is working.
         """
-        detail = Details.objects.create(full_name='Test', age='900', nationality='poland', languages='polish', address='ireland')
+        detail = Details.objects.create(full_name='Test',
+                                        age='900',
+                                        nationality='poland',
+                                        languages='polish',
+                                        address='ireland')
         response = self.client.get(f'/delete-detail/{detail.id}')
         self.assertRedirects(response, '/front/')
         existing_details = Details.objects.filter(id=detail.id)
@@ -112,7 +128,10 @@ class TestViews(TestCase):
         """
         Test if can delete projects is working.
         """
-        project = Projects.objects.create(title='test', project_link='https://www.google.com/', project_description='testing', project_image='placeholder')
+        project = Projects.objects.create(title='test',
+                                          project_link='https://www.google.com/',
+                                          project_description='testing',
+                                          project_image='placeholder')
         response = self.client.get(f'/delete-project/{project.id}')
         self.assertRedirects(response, '/front/')
         existing_projects = Projects.objects.filter(id=project.id)
@@ -122,7 +141,11 @@ class TestViews(TestCase):
         """
         Test if can edit details is working.
         """
-        detail = Details.objects.create(full_name='Test', age='900', nationality='poland', languages='polish', address='ireland')
+        detail = Details.objects.create(full_name='Test',
+                                        age='900',
+                                        nationality='poland',
+                                        languages='polish',
+                                        address='ireland')
         response = self.client.post(f'/edit-detail/{detail.id}', {'full_name': 'Test edit',
                                                                   'age': '900',
                                                                   'nationality': 'poland',
@@ -146,7 +169,10 @@ class TestViews(TestCase):
         """
         Test if can edit projects is working.
         """
-        project = Projects.objects.create(title='test', project_link='https://www.google.com/', project_description='testing', project_image='placeholder')
+        project = Projects.objects.create(title='test',
+                                          project_link='https://www.google.com/',
+                                          project_description='testing',
+                                          project_image='placeholder')
         response = self.client.post(f'/edit-project/{project.id}',
                                                     {'title': 'Title edit',
                                                      'project_link': 'https://www.google.com/',
