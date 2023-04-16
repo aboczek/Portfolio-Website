@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Details, Skills, Projects
 from .forms import SkillsForm, DetailsForm, ProjectsForm
 
-# Create your views here.
 
 def home(request):
     """
@@ -167,3 +166,4 @@ def delete_project(request, project_id):
     project = get_object_or_404(Projects, id=project_id)
     project.delete()
     return redirect("front_panel")
+    
