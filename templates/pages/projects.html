@@ -3,21 +3,54 @@
 {% block template %}
 
 <h1 id="projects">My Projects:</h1>
-<div>
-    {% for project in my_projects %}
-    <ul id="project-description">
-        <li>{{ project.title }}</li>
-        <a href="{{ project.project_link }}" target="_blank">Link</a>
-        <li>{{ project.project_description }}</li>
-        <!-- Placeholder for picture -->
-        {% if "placeholder" in project.project_image.url %}
-        <img src="https://res.cloudinary.com/dlulmj5uy/image/upload/v1680977915/placeholder_ful0ga.png" alt="placeholder" width="20%">
-        {% else %}
-        <!-- if picture uploaded use this -->
-        <img src="{{ project.project_image.url }}" alt="test" width="30%">
-        {% endif %}
-    </ul>
-    {% endfor %}
+<div class="container-lg">
+    <div class="row">
+        <div class="col-12">
+            <div class="row">
+                {% for project in my_projects %}
+                <div class="col-12 col-md-4">
+                    <ul id="project-description">
+                        {% if "placeholder" in project.project_image.url %}
+                        <img src="https://res.cloudinary.com/dlulmj5uy/image/upload/v1680977915/placeholder_ful0ga.png"
+                            alt="placeholder" width="50%">
+                        {% else %}
+                        <img src="{{ project.project_image.url }}" alt="test" width="50%">
+                        {% endif %}
+                        <li>{{ project.title }}</li>
+                        <a href="{{ project.project_link }}" target="_blank">
+                            <Button class="btn btn-primary">Link</Button>
+                        </a>
+                        <li>{{ project.project_description }}</li>
+                    </ul>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 </div>
 
+<!-- <div class="container-lg">
+    <div class="row">
+        <div class="col">
+            <div class="row">
+                {% for project in my_projects %}
+                <div class="col-12 col-md-3 mt-5">
+                    <div class="card" style="width: 30rem;">
+                        <img src="https://res.cloudinary.com/dlulmj5uy/image/upload/v1680977915/placeholder_ful0ga.png"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the
+                                card's content.</p>
+                            <a href="#" class="btn btn-primary">Link</a>
+                        </div>
+                    </div>
+                </div> 
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div> -->
 {% endblock %}
