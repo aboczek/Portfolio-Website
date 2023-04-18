@@ -25,13 +25,17 @@
 
 html {
     font-size: 62.5%;
+    height: 100%;
 }
 
 body {
-    background-color: var(--white);
-    color: var(--black);
+    /* background-color: var(--white);
+    color: var(--black); */
     font-family: 'PT-serif', sans-serif;
     font-size: 2rem;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Header */
@@ -52,8 +56,8 @@ body {
     display: flex;
     align-items: center;
     margin: 3rem auto;
-    width: 100%;
-    height: 100%;
+    max-width: 80%;
+    max-height: 80%;
 }
 
 #welcome-txt {
@@ -71,7 +75,7 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 2rem;
-    padding-top: 1rem;
+    padding-top: 3rem;
 }
 
 /* Sidebar/Hamburger */
@@ -244,6 +248,8 @@ body {
     left: 0;
     bottom: 0;
     width: 100%;
+    height: auto;
+    margin-top: auto;
 }
 
 /* About me */
@@ -275,14 +281,14 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding: 2rem 5rem 0 5rem;
+    margin: 10rem 5rem 0 5rem;
 }
 
 #skills-info {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    width: 35rem;
+    max-width: 45rem;
     margin-left: auto;
     margin-right: auto;
 }
