@@ -250,13 +250,14 @@ body {
     width: 100%;
     height: auto;
     background-color: var(--white);
+    padding-bottom: 3px;
 }
 
 .footer-button {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 3rem auto 0 auto;
+    margin: 3px auto 0 auto;
     width: 9rem;
     height: 3rem;
     color: var(--grey);
@@ -270,7 +271,7 @@ body {
 }
 
 #footer-logo > a:hover{ 
-    margin: 3rem auto 0 auto;
+    margin: 3px auto 0 auto;
     width: 9rem;
     height: 3rem;
     color: var(--white);
