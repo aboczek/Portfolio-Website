@@ -3,12 +3,12 @@
 {% block template %}
 
 <h1 id="projects">My Projects:</h1>
-<div class="container-lg">
+<div class="container-lg mb-5">
     <div class="row">
         <div class="col-12">
             <div class="row">
                 {% for project in my_projects %}
-                <div class="col-12 col-md-4 shadow-lg p-3 mb-5 bg-body rounded">
+                <div class="col-12 col-md-4 shadow p-3 mb-5 bg-body rounded">
                     <ul id="project-description">
                         {% if "placeholder" in project.project_image.url %}
                         <img src="https://res.cloudinary.com/dlulmj5uy/image/upload/v1680977915/placeholder_ful0ga.png"
@@ -16,11 +16,11 @@
                         {% else %}
                         <img src="{{ project.project_image.url }}" alt="test" width="70%">
                         {% endif %}
-                        <li>{{ project.title }}</li>
+                        <li  class="mt-2">{{ project.title }}</li>
+                        <li class="mt-2">{{ project.project_description }}</li>
                         <a href="{{ project.project_link }}" target="_blank">
-                            <Button class="btn btn-primary">Link</Button>
+                            <Button class="btn btn-two btn-primary">Link</Button>
                         </a>
-                        <li>{{ project.project_description }}</li>
                     </ul>
                 </div>
                 {% endfor %}
@@ -28,29 +28,4 @@
         </div>
     </div>
 </div>
-
-<!-- <div class="container-lg">
-    <div class="row">
-        <div class="col">
-            <div class="row">
-                {% for project in my_projects %}
-                <div class="col-12 col-md-3 mt-5">
-                    <div class="card" style="width: 30rem;">
-                        <img src="https://res.cloudinary.com/dlulmj5uy/image/upload/v1680977915/placeholder_ful0ga.png"
-                            class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of
-                                the
-                                card's content.</p>
-                            <a href="#" class="btn btn-primary">Link</a>
-                        </div>
-                    </div>
-                </div> 
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-</div> -->
 {% endblock %}
