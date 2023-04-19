@@ -1,10 +1,18 @@
 {% load static %}
 
 <footer>
+    <!-- Tablets and large screens -->
     <div id="footer-logo">
         <a href="https://github.com/aboczek" target="_blank" class="footer-button"><i class="fa-brands fa-github" title="My GitHub profile"></i></a>
         <a href="https://www.linkedin.com/in/aboczek/" target="_blank" class="footer-button"><i class="fa-brands fa-linkedin" title="My LinkedIn profile"></i></a>
         <a href="{% static 'images/CV-Adam-Boczek.pdf' %}" target="_blank" class="footer-button" download><i class="fa-solid fa-download" title="My CV download" download></i></a>
-        <a href="mailto: adam.boczekwork@gmail.com" target="_blank" id="footer-email">Send me an Email</i></a>
+        <a href="mailto: adam.boczekwork@gmail.com" target="_blank" class="footer-button"><i class="fa-solid fa-envelope"></i></i></a>
+    </div>
+    <!-- Small tablets and mobile -->
+    <div id="footer-logo-mobile">
+        <a href="https://github.com/aboczek" target="_blank" class="footer-mobile"><i class="fa-brands fa-github" title="My GitHub profile"></i></a>
+        <a href="https://www.linkedin.com/in/aboczek/" target="_blank" class="footer-mobile"><i class="fa-brands fa-linkedin" title="My LinkedIn profile"></i></a>
+        <a href="{% static 'images/CV-Adam-Boczek.pdf' %}" target="_blank" class="footer-mobile" download><i class="fa-solid fa-download" title="My CV download" download></i></a>
+        <a href="mailto: adam.boczekwork@gmail.com" target="_blank" class="footer-mobile"><i class="fa-solid fa-envelope"></i></i></a>
     </div>
 </footer>
