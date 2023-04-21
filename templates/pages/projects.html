@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block template %}
 
 <h1 id="projects">My Projects:</h1>
@@ -11,7 +11,7 @@
                 <div class="col-12 col-md-4 shadow p-3 mb-5 bg-body rounded">
                     <ul id="project-description">
                         {% if "placeholder" in project.project_image.url %}
-                        <img src="https://res.cloudinary.com/dlulmj5uy/image/upload/v1680977915/placeholder_ful0ga.png"
+                        <img src="{% static 'images/placeholder.png' %}"
                             alt="placeholder" width="50%">
                         {% else %}
                         <img src="{{ project.project_image.url }}" alt="test" width="70%">

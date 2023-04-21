@@ -54,7 +54,7 @@ class TestViews(TestCase):
         """
         Test if edit skills is up and running.
         """
-        skill = Skills.objects.create(skill="skills")
+        skill = Skills.objects.create(skill='skills')
         response = self.client.get(f'/edit-skill/{skill.id}')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'pages/edit-skill.html')
@@ -108,7 +108,7 @@ class TestViews(TestCase):
         """
         Test if delete skills is working.
         """
-        skill = Skills.objects.create(skill="Test skills")
+        skill = Skills.objects.create(skill='Test skills')
         response = self.client.get(f'/delete-skill/{skill.id}')
         self.assertRedirects(response, '/front/')
         existing_skills = Skills.objects.filter(id=skill.id)

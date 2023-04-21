@@ -1,6 +1,8 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block template %}
+
 {% if user.is_authenticated %}
 {% if request.user.is_staff %}
 <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -178,7 +180,7 @@
                                     </li>
                                     <li>
                                         {% if "placeholder" in project.project_image.url %}
-                                        <img src="https://res.cloudinary.com/dlulmj5uy/image/upload/v1680977915/placeholder_ful0ga.png"
+                                        <img src="{% static 'images/placeholder.png' %}"
                                             alt="placeholder" width="30%">
                                         {% else %}
                                         <img src="{{ project.project_image.url }}" alt="test" width="30%">

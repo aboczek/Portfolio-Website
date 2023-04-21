@@ -8,9 +8,9 @@ def home(request):
     home page
     """
     context = {
-        "title": "Home"
+        'title': 'Home'
     }
-    return render(request, "pages/index.html", context)
+    return render(request, 'pages/index.html', context)
 
 
 def about_me(request):
@@ -20,11 +20,11 @@ def about_me(request):
     details = Details.objects.all()
     skills = Skills.objects.all()
     context = {
-        "details": details,
-        "skills": skills,
-        "title": "About Me"
+        'details': details,
+        'skills': skills,
+        'title': 'About Me'
         }
-    return render(request, "pages/about-me.html", context)
+    return render(request, 'pages/about-me.html', context)
 
 
 def projects(request):
@@ -33,10 +33,10 @@ def projects(request):
     """
     my_projects = Projects.objects.all()
     context = {
-        "title": "My Projects",
-        "my_projects": my_projects,
+        'title': 'My Projects',
+        'my_projects': my_projects,
     }
-    return render(request, "pages/projects.html", context)
+    return render(request, 'pages/projects.html', context)
 
 def front_panel(request):
     """
@@ -68,15 +68,15 @@ def front_panel(request):
             return redirect('front_panel')
 
     context = {
-        "details": details,
-        "details_form": details_form,
-        "skills_form": skills_form,
-        "skills": skills,
-        "my_projects": my_projects,
-        "projects_form": projects_form,
-        "title": "Hello Boss",
+        'details': details,
+        'details_form': details_form,
+        'skills_form': skills_form,
+        'skills': skills,
+        'my_projects': my_projects,
+        'projects_form': projects_form,
+        'title': 'Hello Boss',
         }
-    return render(request, "pages/front-panel.html", context)
+    return render(request, 'pages/front-panel.html', context)
 
 def edit_skill(request, skill_id):
     """
@@ -90,11 +90,11 @@ def edit_skill(request, skill_id):
             return redirect('front_panel')
     edit_skills_form = SkillsForm(instance=skill)
     context = {
-        "edit_skills_form": edit_skills_form,
-        "title": "Lets Edit Boss"
+        'edit_skills_form': edit_skills_form,
+        'title': 'Lets Edit Boss'
     }
 
-    return render(request, "pages/edit-skill.html", context)
+    return render(request, 'pages/edit-skill.html', context)
 
 
 def delete_skill(request, skill_id):
@@ -103,7 +103,7 @@ def delete_skill(request, skill_id):
     """
     skill = get_object_or_404(Skills, id=skill_id)
     skill.delete()
-    return redirect("front_panel")
+    return redirect('front_panel')
 
 
 def edit_detail(request, detail_id):
@@ -118,11 +118,11 @@ def edit_detail(request, detail_id):
             return redirect('front_panel')
     details_form = DetailsForm(instance=detail)
     context = {
-        "details_form": details_form,
-        "title": "Lets Edit Boss"
+        'details_form': details_form,
+        'title': 'Lets Edit Boss'
     }
 
-    return render(request, "pages/edit-detail.html", context)
+    return render(request, 'pages/edit-detail.html', context)
 
 def delete_detail(request, detail_id):
     """
@@ -130,7 +130,7 @@ def delete_detail(request, detail_id):
     """
     detail = get_object_or_404(Details, id=detail_id)
     detail.delete()
-    return redirect("front_panel")
+    return redirect('front_panel')
 
 def edit_project(request, project_id):
     """
@@ -144,11 +144,11 @@ def edit_project(request, project_id):
             return redirect('front_panel')
     edit_projects_form = ProjectsForm(instance=project)
     context = {
-        "edit_projects_form": edit_projects_form,
-        "title": "Lets Edit Boss"
+        'edit_projects_form': edit_projects_form,
+        'title': 'Lets Edit Boss'
     }
 
-    return render(request, "pages/edit-project.html", context)
+    return render(request, 'pages/edit-project.html', context)
 
 def delete_project(request, project_id):
     """
@@ -156,5 +156,5 @@ def delete_project(request, project_id):
     """
     project = get_object_or_404(Projects, id=project_id)
     project.delete()
-    return redirect("front_panel")
+    return redirect('front_panel')
     
