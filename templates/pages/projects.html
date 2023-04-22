@@ -9,19 +9,17 @@
             <div class="row">
                 {% for project in my_projects %}
                 <div class="col-12 col-md-4 shadow p-3 mb-5 bg-body rounded">
-                    <ul id="project-description">
+                    <div class="project-description">
                         {% if "placeholder" in project.project_image.url %}
                         <img src="{% static 'images/placeholder.png' %}"
                             alt="placeholder" width="50%">
                         {% else %}
                         <img src="{{ project.project_image.url }}" alt="test" width="70%">
                         {% endif %}
-                        <li  class="mt-2">{{ project.title }}</li>
-                        <li class="mt-2">{{ project.project_description }}</li>
-                        <a href="{{ project.project_link }}" target="_blank">
-                            <Button class="btn btn-two btn-primary">Link</Button>
-                        </a>
-                    </ul>
+                        <div class="mt-2">{{ project.title }}</div>
+                        <div class="mt-2">{{ project.project_description }}</div>
+                        <a href="{{ project.project_link }}" target="_blank" class="btn btn-two btn-primary">Link</a>
+                    </div>
                 </div>
                 {% endfor %}
             </div>

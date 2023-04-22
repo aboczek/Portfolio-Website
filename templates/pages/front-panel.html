@@ -21,7 +21,7 @@
     <li id="logout-button">
         <a href="{% url 'account_logout' %}">Logout</a>
     </li>
-    
+
 </ul>
 <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
@@ -30,7 +30,7 @@
             <div class="container-lg mb-5">
                 <div class="row">
                     <div class="col">
-                        <table id="input-skills">
+                        <table class="input-skills">
                             <tr>
                                 <td>
                                     <!-- Details form-->
@@ -70,12 +70,8 @@
                                 {{ detail.address }}
                             </td>
                             <td>
-                                <a href="/edit-detail/{{ detail.id }}" class="btn-skills">
-                                    <button class="btn btn-info">Edit</button>
-                                </a>
-                                <a href="/edit-delete/{{ detail.id }}" class="btn-skills">
-                                    <button class="btn btn-danger">Delete</button>
-                                </a>
+                                <a href="/edit-detail/{{ detail.id }}" class="btn-skills btn btn-info">Edit</a>
+                                <a href="/edit-delete/{{ detail.id }}" class="btn-skills btn btn-danger">Delete</a>
                             </td>
                         </tr>
                         {% endfor %}
@@ -91,7 +87,7 @@
             <div class="container-lg mb-5">
                 <div class="row">
                     <div class="col">
-                        <table id="input-skills">
+                        <table class="input-skills">
                             <tr>
                                 <td>
                                     <!-- Skills form -->
@@ -121,14 +117,10 @@
                                         <p>{{ skill.skill }}</p>
                                     </td>
                                     <td>
-                                        <a href="/edit-skill/{{ skill.id }}" class="btn-skills btn-padding">
-                                            <button class="btn btn-info">Edit</button>
-                                        </a>
+                                        <a href="/edit-skill/{{ skill.id }}" class="btn-skills btn-padding btn btn-info">Edit</a>
                                     </td>
                                     <td>
-                                        <a href="/delete-skill/{{ skill.id }}" class="btn-skills btn-padding">
-                                            <button class="btn btn-danger">Delete</button>
-                                        </a>
+                                        <a href="/delete-skill/{{ skill.id }}" class="btn-skills btn-padding btn btn-danger">Delete</a>
                                     </td>
                                 </tr>
                                 {% endfor %}
@@ -165,38 +157,33 @@
                 <div class="col-xl-6 mb-5" id="border-project">
                     {% for project in my_projects %}
                     <table>
-                        <tr>
-                            <td id="project-preview">
+                        <tr class="btn-margins">
+                            <td class="project-preview">
                                 <ul>
-                                    <li id="project-padding">
+                                    <li class="project-padding">
                                         {{ project.title }}
                                     </li>
                                     <li>
-                                        <a href="{{ project.project_link }}"
-                                            target="_blank" class="btn-skills">{{ project.project_link }}</a>
+                                        <a href="{{ project.project_link }}" target="_blank">{{ project.project_link }}</a>
                                     </li>
                                     <li>
                                         <p>{{ project.project_description }}</p>
                                     </li>
                                     <li>
                                         {% if "placeholder" in project.project_image.url %}
-                                        <img src="{% static 'images/placeholder.png' %}"
-                                            alt="placeholder" width="30%">
+                                        <img src="{% static 'images/placeholder.png' %}" alt="placeholder" width="300">
                                         {% else %}
-                                        <img src="{{ project.project_image.url }}" alt="test" width="30%">
+                                        <img src="{{ project.project_image.url }}" alt="test" width="300">
                                         {% endif %}
                                     </li>
                                 </ul>
                             </td>
                             <td>
-                                <a href="/edit-project/{{ project.id }}" class="btn-skills" aria-label="edit project">
-                                    <button class="btn btn-info">Edit</button>
-                                </a>
+                                <a href="/edit-project/{{ project.id }}" class="btn-skills btn btn-info" aria-label="edit project">Edit</a>
                             </td>
                             <td>
-                                <a href="/delete-project/{{ project.id }}" aria-label="delete project" class="btn-skills btn-padding">
-                                    <button class="btn btn-danger">Delete</button>
-                                </a>
+                                <a href="/delete-project/{{ project.id }}" aria-label="delete project"
+                                    class="btn-skills btn-padding btn btn-danger">Delete</a>
                             </td>
                         </tr>
                     </table>
@@ -207,7 +194,7 @@
     </div>
     {% else %}
     <!-- redirect button if unwanted user creates account -->
-    <a href="{% url 'home' %}" id="redirection" class="btn-skills"><button class="btn btn-danger">Go back</button></a>
+    <a href="{% url 'home' %}" id="redirection" class="btn-skills">Go back</a>
     {% endif %}
     {% endif %}
     {% endblock %}

@@ -334,7 +334,7 @@ body {
     padding-top: 5rem;
 }
 
-#project-description {
+.project-description {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -351,11 +351,11 @@ body {
     padding-top: 4rem;
 }
 
-#project-description > li {
+.project-description > div {
     list-style-type: none;
 }
 
-ul#project-description {
+div#project-description {
     padding-left: 0;  /* overwritting bootstrap scss */ 
 }
 
@@ -429,6 +429,9 @@ input#id_password {
 }
 
 .btn-two {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 1.75rem;
     padding: 0;
     height: 4rem;
@@ -487,7 +490,7 @@ input#id_password {
             align-items: center;
 }
 
-#input-skills {
+.input-skills {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -540,11 +543,11 @@ input#id_password {
 }
 
 #projects-form,
-#project-padding {
+.project-padding {
     padding-top: 2rem;
 }
 
-#project-preview > #text {
+.project-preview > #text {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -570,14 +573,22 @@ input#id_password {
 }
 
 .btn-skills {
-    padding-top: 1rem;
     text-decoration: none;
+    margin-top: 1rem;
+    width:7rem;
+    font-size: 1.5rem
 }
 
 .btn-skills > button {
     margin-top: 1rem;
     width:7rem;
-    font-size: 1.5rem;
+    font-size: 1.5rem
+}
+
+.btn-skills a {
+    margin-top: 1rem;
+    width:7rem;
+    font-size: 1.5rem
 }
 
 .edit {
