@@ -163,25 +163,89 @@ Websites goal is to promote myself as full stack developer and show off my proje
 
 ## Frameworks and Libraries used.
 
-- [Django](https://www.djangoproject.com/)
+- [Django](https://www.djangoproject.com/) Python-based web framework that follows the model–template–views architectural pattern.
 
-- [Heroku](https://www.heroku.com)
+- [Heroku](https://www.heroku.com) Deployment of website.
 
-- [ElephantSQL](https://www.elephantsql.com/)
+- [ElephantSQL](https://www.elephantsql.com/) Database storing all schemas and data.
 
-- []()
+- [Cloudinary](https://cloudinary.com/) Image storage.
 
-- []()
+- [Gunicorn](https://en.wikipedia.org/wiki/Gunicorn) HTTP server interface.
 
-- []()
+- [Psycopg](https://wiki.postgresql.org/wiki/Psycopg) Postgres database adaptor.
+
+- [Pexels](https://www.pexels.com/) Free pictures, used on home page.
+
+- [Bootstrap](https://getbootstrap.com/) Bootstrap 5 was used in this project.
+
+- [Balsamiq](https://balsamiq.com/) Wireframes.
+
+- [FontAwesome](https://fontawesome.com/) Icons used in this project.
+
+- [Miniwebtool](https://miniwebtool.com/django-secret-key-generator/) used to generate new key.
+
+- [Google fonts](https://fonts.google.com/) PT-serif was used.
+
+- [Favicon](https://favicon.io/favicon-generator/) Favicon generator.
 
 # Features
 
-**placeholder**
+- Responsive on all devices.
+- Interactive buttons.
+- Custom front panel.
+- Cloudinary picture storage.
+
+## Navigation
+
+- Hamburger menu and footer.
+    - large and big tablets.
+
+        <img src="docs/hamburger.png" alt="hamburger menu" width="1000">
+        <img src="docs/footer.png" alt="footer" width="1000"> 
+
+    - Small tablets and mobile.
+
+        <img src="docs/hamburger-tablet.png" alt="hamburger menu small devices" width="1000">
+        <img src="docs/footer-small.png" alt="footer small device" width="1000">
 
 
+- Large devices.
 
-**loads of place holders**
+    <img src="docs/1.jpg" alt="home page" width="1000">
+    <img src="docs/2.png" alt="about me page" width="1000">
+    <img src="docs/3.png" alt="projects page" width="1000">
+
+- Tablets.
+
+    <img src="docs/1-tablet.png" alt="home page tablet view" width="700">
+
+    <img src="docs/2-tablet.png" alt="about me page tablet view" width="700">
+
+    <img src="docs/3-tablet.png" alt="projects page tablet view" width="700">
+
+- Small devices and mobile.
+
+    <img src="docs/1-small.png" alt="home page small device view" width="500">
+    <img src="docs/2-small.png" alt="about me page small device view" width="500">
+    <img src="docs/3-small.png" alt="projects page small device view" width="500">
+
+- Front panel which only I have access to.
+    - large devices.
+
+    <img src="docs/1-front-details.png" alt="front panel details" width="1000">
+    <img src="docs/2-front-skills.png" alt="front panel skills" width="1000">
+    <img src="docs/3-front-projects.png" alt="front panel projects" width="1000">
+
+    - Tablet and medium devices.
+
+    <img src="docs/4-front-details.png" alt="front panel details" width="700">
+
+    <img src="docs/5-front-skills.png" alt="front panel details" width="700">
+
+    <img src="docs/6-front-projects.png" alt="front panel details" width="700">
+
+- Small devices dont scale nicely on front panel no pictures to be added.
 
 # Testing
 
