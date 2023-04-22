@@ -251,19 +251,112 @@ Websites goal is to promote myself as full stack developer and show off my proje
 
 1. W3C HTML Validator and CSS Validator
 
-**placeholder**
+- HTML
+    - All pages visible for user works.
+
+    <img src="docs/index-validator.png" alt="html validator" width="700">
+
+    - Error with width and height for index page image, and loading time is justified. Image is loaded from cloudinary and bootstrap is sizing it for me.
+
+    <img src="docs/index-errors.png" alt="error index page" width="">
+
+    - Front panel has warnings about exceeding columns, i have it justified content is rendered in it from database,
+     and external user doesnt see it at all. I have tried fixing it but I dont have enough time till deadline to finish it up,
+      so decided to leave it till after the course.
+<br>
+    <img src="docs/warnings-table.png" alt="front panel validator warnings" width="700">
+
+- CSS 
+
+    <img src="docs/cssvalidator.png" alt="css validator" width="700">
 
 2. Testing on website.
 
-**placeholder**
+- Lighthouse:
+
+    - Desktop
+
+        <img src="docs/desktop-lighthouse.png" alt="light house score on desktop">
+
+    - Mobile
+
+        <img src="docs/mobile-lighthouse.png" alt="light house score on desktop">
 
 3. Testing on portable devices.
 
-**palceholder**
 
-4. Known bugs.
+    I have tested it on my OnePlus phone and in Developer tools. Everything seemed nice.
 
-- CV doesnt download (Fixed)
+    Tested more devices two as an example.
+
+    <img src="docs/testing-mobile.png" alt="testing mobile">
+
+    <img src="docs/testing-tablet.png" alt="testing tablet">
+
+4. Automated testing done by me all passing except URLS showing that imports are not tested.
+
+- Views automatic testing:
+
+    <details><summary>views.py testing</summary>
+    <img src="docs/views-py-image.png" alt="views testing"/>
+    </details>
+    <br>
+
+- Forms automatic testing:
+
+    <details><summary>forms.py testing</summary>
+    <img src="docs/forms-py-image.png" alt="forms testing"/>
+    </details>
+    <br>
+
+- Models automatic testing:
+
+    <details><summary>models.py testing</summary>
+    <img src="docs/models-py-image.png" alt="models testing"/>
+    </details>
+    <br>
+
+- Coverage:
+
+    <details><summary>coverage</summary>
+    <img src="docs/coverage-html.png" alt="coverage"/>
+    </details>
+    <br>
+
+- URLS not tested shows to test imports?:
+
+    <details><summary>coverage urls</summary>
+    <img src="docs/coverage-html-urls.png" alt="coverage urls"/>
+    </details>
+    <br>
+
+5. Known bugs.
+
+- CV doesnt download. (Fixed)
+- Images wouldnt upload after adding more code to views. (Fixed)
+- Front panel, buttons in project preview grow after fixing html errors.
+
+6. Bugs Fixed.
+
+- CV needed download as attribute in html files, that solved the issue.
+
+- Images fix was adding "request.File" to edit and create functions and "enctype="multipart/form-data" to front-panel.html create form and edit-project.html.
+<details><summary>Edit project view</summary>
+<img src="docs/edit-project.png" alt="edit project view"/>
+</details>
+<br>
+<details><summary>Create project view</summary>
+<img src="docs/create-project.png" alt="create project view"/>
+</details>
+<br>
+<details><summary>Create project form</summary>
+<img src="docs/edit-project-form.png" alt="create project form"/>
+</details>
+<br>
+<details><summary>Edit project form</summary>
+<img src="docs/edit-project-form.png" alt="edit project form"/>
+</details>
+<br>
 
 # Testing user stories
 
@@ -281,6 +374,11 @@ Websites goal is to promote myself as full stack developer and show off my proje
 
 # Credits:
 
-- <a href="https://www.freepik.com/free-vector/abstract-dark-blue-vector-futuristic-digital-grid-background_16240178.htm#query=website%20background&position=25&from_view=keyword">Image by rawpixel.com</a> on Freepik
-
-**placeholder**
+- [Pexels](https://www.pexels.com/) images.
+- [Simen Daehlin](https://github.com/Eventyret) My Mentor very Helpfull!.
+- [The W3C Markup Validation Service](https://validator.w3.org/) Validation of HTML.
+- [The W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) Validation of CSS.
+- [Autoprefixer](https://autoprefixer.github.io/) used to prefix CSS.
+- [Colorhexa](https://www.colorhexa.com/) was used to take colors from for readme.
+- Slack Community and my Mentor!
+- Tutor Support.
