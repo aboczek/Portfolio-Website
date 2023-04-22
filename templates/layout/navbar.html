@@ -1,19 +1,27 @@
 {% load static %}
-<div>
-    <label class="hamburger-menu">
-        <input type="checkbox">
-    </label>
-    <aside class="sidebar">
-        <nav id="links">
-            <a href="{% url 'home' %}">Home</a>
-            <a href="{% url 'about_me' %}">About me</a>
-            <a href="{% url 'projects' %}">Projects</a>
-            <a href="{% static 'images/CV-Adam-Boczek.pdf' %}" target="_blank" download>CV<i class="fa-solid fa-download" title="My CV download" download></i></a>
-        </nav>
-        {% if debug_flag %}
-        <nav id="link-login">
-            <a href="{% url 'account_login' %}">Login</a>
-        </nav>
-        {% endif %}
-    </aside>
+
+<div class="collapse" id="navbarToggleExternalContent">
+    <div class="bg-dark p-4">
+        <span class="text-muted">
+            <nav id="links">
+                <a href="{% url 'home' %}">Home</a>
+                <a href="{% url 'about_me' %}">About me</a>
+                <a href="{% url 'projects' %}">Projects</a>
+                <a href="{% static 'images/CV-Adam-Boczek.pdf' %}" target="_blank" download>CV<i
+                        class="fa-solid fa-download" title="My CV download" download></i></a>
+                {% if debug_flag %}
+                <a href="{% url 'account_login' %}">Login</a>
+                {% endif %}
+            </nav>
+        </span>
+    </div>
 </div>
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</nav>

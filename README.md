@@ -39,10 +39,8 @@ My motivation for this website is to have my personal portfolio website to put m
     - As a user, I want to be able to land on main page.
     - As a user, I want to be able to navigate to About page.
     - As a user, I want to be able to navigate to Projects page.
-    - As a user, I want to be able to navigate to Contact page.
     - As a user, I want to navigate through website easily.
     - As a user, I want to see projects done by the developer.
-    - As a user, I want to be able to open link with projects on GitHub.
     - As a user, I want to be able to visit developer's GitHub.
     - As a user, I want to be able to download CV from Developer.
     - As a user, I want to see where Developer is located.
@@ -57,10 +55,8 @@ Websites goal is to promote myself as full stack developer and show off my proje
 
 - Landing Page.
 - About Page.
-- Contact Page.
 - Projects showcase page.
 - Download CV.
-- Google Maps.
 
 ## Expectations
 
@@ -73,14 +69,28 @@ Websites goal is to promote myself as full stack developer and show off my proje
 - Colors
     - Colors used on website are:
 
-    **placeholder**
+        - White #fff:
 
+        <img src="docs/white.png" alt="white" width="10%">
+
+        - Blue #008cff:
+
+        <img src="docs/blue.png" alt="blue" width="10%">
+
+        - Grey #333
+
+        <img src="docs/grey.png" alt="grey" width="10%">
 
     - Fonts:
 
-    **placeholder**
+    - 'PT-serif'
+
+        - [Google fonts](https://fonts.google.com/specimen/PT+Serif)
 
     - Images:
+
+        - Images used from [Pexel image](https://www.pexels.com/photo/hands-typing-on-a-laptop-keyboard-5483077/)
+
 
 [Back to top](#)
 

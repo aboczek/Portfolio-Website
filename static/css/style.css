@@ -22,12 +22,6 @@
     --light-grey: #868686;
     --red: #ff0000;
 
-    --bar-width: 4.5rem;
-    --bar-height: 0.8rem;
-    --hamburger-gap: 0.6rem;
-    --hamburger-margin: 0.8rem;
-    --animation-timing: 200ms ease-in-out;
-    --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2)
 }
 
 html {
@@ -107,129 +101,33 @@ body {
     padding-top: 3rem;
 }
 
-/* Sidebar/Hamburger */
+/* Hamburger */
 
-*::after,
-*::before {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+.navbar-toggler-icon {
+    width: 2.5rem;
+    height: 2.5rem;
 }
 
-.hamburger-menu {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    gap: var(--hamburger-gap);
-    width: -webkit-max-content;
-    width: -moz-max-content;
-    width: max-content;
-    position: absolute;
-    top: var(--hamburger-margin);
-    left: var(--hamburger-margin);
-    z-index: 99999;
-    cursor: pointer;
-    --x-width: calc(var(--hamburger-height) * 1.41421356237);
+.p-4 {
+    padding: 0!important;
 }
 
-.hamburger-menu:has(input:checked) {
-    --grey: var(--white);
+.bg-dark {
+    background-color: var(--grey)!important;
 }
 
-.hamburger-menu:has(input:focus-visible)::before,
-.hamburger-menu:has(input:focus-visible)::after,
-.hamburger-menu input:focus-visible {
-    border: 1px solid var(--white);
-    -webkit-box-shadow: 0 0 0 1px var(--grey);
-            box-shadow: 0 0 0 1px var(--grey);
-}
-
-.hamburger-menu::before,
-.hamburger-menu::after,
-.hamburger-menu input {
-    content: "";
-    width: var(--bar-width);
-    height: var(--bar-height);
-    background-color: var(--grey);
-    border-radius: 99rem;
-    -webkit-transform-origin: left center;
-        -ms-transform-origin: left center;
-            transform-origin: left center;
-    -webkit-transition: opacity var(--animation-timing), width var(--animation-timing),
-     rotate var(--animation-timing), translate var(--animation-timing), 
-     background-color var(--animation-timing);
-    -o-transition: opacity var(--animation-timing), width var(--animation-timing),
-     rotate var(--animation-timing), translate var(--animation-timing), 
-     background-color var(--animation-timing);
-    transition: opacity var(--animation-timing), width var(--animation-timing),
-     rotate var(--animation-timing), translate var(--animation-timing), 
-     background-color var(--animation-timing);
-}
-
-.hamburger-menu input {
-    -webkit-appearance: none;
-       -moz-appearance: none;
-            appearance: none;
-    outline: none;
-    pointer-events: none;
-}
-
-.hamburger-menu:has(input:checked)::before {
-    rotate: 45deg;
-    width: var(--x-width);
-    translate: 0 calc(var(--bar-height) / -2);
-}
-
-.hamburger-menu:has(input:checked)::after {
-    rotate: -45deg;
-    width: var(--x-width);
-    translate: 0 calc(var(--bar-height) / 2);
-}
-
-.hamburger-menu input:checked {
-    opacity: 0;
-    width: 0;
-}
-
-.sidebar {
-    -webkit-transition: translate var(--animation-timing);
-    -o-transition: translate var(--animation-timing);
-    transition: translate var(--animation-timing);
-    translate: -100%;
-    padding: 0.8rem 1.6rem;
-    padding-top: calc(var(--hamburger-height) + var(--hamburger-margin) + 1.6rem);
-    background-color: var(--grey);
-    color: var(--white);
-    max-width: 20rem;
-    min-height: 100vh;
-    position: absolute;
-}
-
-.hamburger-menu:has(input:checked) + .sidebar {
-    translate: 0;
-    position: absolute;
-    z-index: 5;
+.navbar-toggler {
+    font-size: 2rem;
 }
 
 /* Buttons */
 
 #links {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    justify-content: center;
+
+    align-items: center;
+    flex-direction: row;
     font-size: 2rem;
 }
 
@@ -256,59 +154,6 @@ body {
 }
 
 #links > a:hover {
-    margin: 3rem auto 0 auto;
-    width: 12rem;
-    height: 5rem;
-    color: var(--white);
-    background-color: var(--blue);
-    text-decoration: none;
-    border-radius: 2rem;
-    border-width: 2px;
-    -webkit-transition: 0.2s ease-in-out;
-    -o-transition: 0.2s ease-in-out;
-    transition: 0.2s ease-in-out;
-}
-
-#link-login {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    font-size: 2rem;
-}
-
-#link-login > a {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    margin: 3rem auto 0 auto;
-    width: 12rem;
-    height: 5rem;
-    color: var(--grey);
-    font-weight: 700;
-    background-color: var(--white);
-    text-decoration: none;
-    border-radius: 2rem;
-    border-color: var(--black);
-    border: 2px solid var(--blue);
-}
-
-#link-login > a:hover {
     margin: 3rem auto 0 auto;
     width: 12rem;
     height: 5rem;
@@ -843,6 +688,17 @@ input#id_password {
         height: auto;
         width: 100%;
         padding-bottom: 3px;
+    }
+
+    #links {
+        font-size: 1.5rem;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    #links > a {
+        margin: 2rem auto 0 auto;
     }
 }
 
