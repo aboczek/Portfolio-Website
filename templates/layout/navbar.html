@@ -2,8 +2,7 @@
 
 <div class="collapse" id="navbarToggleExternalContent">
     <div class="bg-dark p-4">
-        <span class="text-muted">
-            <nav id="links">
+        <span class="text-muted" id="links">
                 <a href="{% url 'home' %}">Home</a>
                 <a href="{% url 'about_me' %}">About me</a>
                 <a href="{% url 'projects' %}">Projects</a>
@@ -12,7 +11,6 @@
                 {% if debug_flag %}
                 <a href="{% url 'account_login' %}">Login</a>
                 {% endif %}
-            </nav>
         </span>
     </div>
 </div>
