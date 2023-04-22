@@ -83,7 +83,7 @@ Websites goal is to promote myself as full stack developer and show off my proje
 
     - Fonts:
 
-    - 'PT-serif'
+    - PT-serif and backup San-serif
 
         - [Google fonts](https://fonts.google.com/specimen/PT+Serif)
 
@@ -96,39 +96,84 @@ Websites goal is to promote myself as full stack developer and show off my proje
 
 ## Wireframes
 
-**placeholder**
+- Home page.
+    <details><summary>Picture</summary>
+    <img src="docs/home-page.png" alt="home page"/>
+    </details>
+    <br>
 
-### Desktop
+- About me page.
+    <details><summary>Picture</summary>
+    <img src="docs/about-me.png" alt="about me page"/>
+    </details>
+    <br>
 
-**placeholder**
+- Projects page.
+    <details><summary>Picture</summary>
+    <img src="docs/projects.png" alt="projects page"/>
+    </details>
+    <br>
 
-### Tablet
+- Front panel page.
+    <details><summary>Picture</summary>
+    <img src="docs/front-panel-details.png" alt="front panel details section"/>
+    </details>
+    <br>
+    <details><summary>Picture</summary>
+    <img src="docs/front-panel-skills.png" alt="front panel skills section"/>
+    </details>
+    <br>
+    <details><summary>Picture</summary>
+    <img src="docs/front-panel-projects.png" alt="front panel projects section"/>
+    </details>
+    <br>
 
-**placehodler**
+- Front panel editing pages.
+    <details><summary>Picture</summary>
+    <img src="docs/edit-pages.png" alt="front panel editiing pages"/>
+    </details>
+    <br>
 
-### Mobile
+- Hamburger menu.
+    <details><summary>Picture</summary>
+    <img src="docs/hamburger menu.png" alt="hamburger menu"/>
+    </details>
+    <br>
 
-**placeholder**
+
 
 # Website structure
 
-|  Screen size |  Breakpoint |
-|---|---|
-|small|>= 576px|
-|medium|>= 768px|
-|large|>= 1024px|
+- Breakpoints were mostly solved with [bootstrap 5](https://getbootstrap.com/docs/5.1/getting-started/introduction/).
+
+- Breakpoints done by me:
+    |  Screen size |  from |  | to breakpoint|
+    |---|---|---|---|
+    |small|>= 320px| medium | <= 768px |
 
 [Back to top](#)
 
 # Technology, Frameworks and Libraries used.
 
-## Languages
+- [HTML](https://en.wikipedia.org/wiki/HTML5) 
 
-**placeholder**
+- [CSS](https://en.wikipedia.org/wiki/CSS)
+
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 
 ## Frameworks and Libraries used.
 
-**placeholder**
+- [Django](https://www.djangoproject.com/)
+
+- [Heroku](https://www.heroku.com)
+
+- [ElephantSQL](https://www.elephantsql.com/)
+
+- []()
+
+- []()
+
+- []()
 
 # Features
 
