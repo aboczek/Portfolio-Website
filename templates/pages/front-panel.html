@@ -117,10 +117,12 @@
                                         <p>{{ skill.skill }}</p>
                                     </td>
                                     <td>
-                                        <a href="/edit-skill/{{ skill.id }}" class="btn-skills btn-padding btn btn-info">Edit</a>
+                                        <a href="/edit-skill/{{ skill.id }}"
+                                            class="btn-skills btn-padding btn btn-info">Edit</a>
                                     </td>
                                     <td>
-                                        <a href="/delete-skill/{{ skill.id }}" class="btn-skills btn-padding btn btn-danger">Delete</a>
+                                        <a href="/delete-skill/{{ skill.id }}"
+                                            class="btn-skills btn-padding btn btn-danger">Delete</a>
                                     </td>
                                 </tr>
                                 {% endfor %}
@@ -164,7 +166,8 @@
                                         {{ project.title }}
                                     </li>
                                     <li>
-                                        <a href="{{ project.project_link }}" target="_blank">{{ project.project_link }}</a>
+                                        <a href="{{ project.project_link }}"
+                                            target="_blank">{{ project.project_link }}</a>
                                     </li>
                                     <li>
                                         <p>{{ project.project_description }}</p>
@@ -179,7 +182,8 @@
                                 </ul>
                             </td>
                             <td>
-                                <a href="/edit-project/{{ project.id }}" class="btn-skills btn btn-info" aria-label="edit project">Edit</a>
+                                <a href="/edit-project/{{ project.id }}" class="btn-skills btn btn-info"
+                                    aria-label="edit project">Edit</a>
                             </td>
                             <td>
                                 <a href="/delete-project/{{ project.id }}" aria-label="delete project"
@@ -194,7 +198,10 @@
     </div>
     {% else %}
     <!-- redirect button if unwanted user creates account -->
-    <a href="{% url 'home' %}" id="redirection" class="btn-skills">Go back</a>
+    <div id="redirection">
+        <a href="{% url 'home' %}" class="btn-skills btn btn-danger">Go back</a>
+    </div>
+
     {% endif %}
     {% endif %}
     {% endblock %}
