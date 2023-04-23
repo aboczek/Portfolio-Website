@@ -158,7 +158,7 @@ Websites goal is to promote myself as full stack developer and show off my proje
 
 - Users cannot register this is **personal** Portfolio Project to use in future.
 
-- Register option exists but all admin functionality is pretected by is staff.
+- The register option exists but all admin functionality is protected by the **is_staff**.
 
     <details><summary>Login</summary>
     <img src="docs/login.png" alt="login"/>
