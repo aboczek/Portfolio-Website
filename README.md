@@ -560,7 +560,188 @@ Websites goal is to promote myself as full stack developer and show off my proje
 
 # Deployment
 
-**placeholder**
+## Programs needed:
+
+
+### Cloudinary
+
+- Create an account [here](https://cloudinary.com/).
+- Login and let them chose for you in first window. Then go to dash board and kopy API Key.
+<details><summary>Picture</summary>
+<img src="docs/deployment/cloudianry-1.png" alt="cloudinary"/>
+<img src="docs/deployment/cloudianry-2.png" alt="cloudinary"/>
+</details>
+<br>
+
+
+### Heroku
+
+- Create an account [here](https://www.heroku.com/) it will be used later.
+
+### GitHub
+
+- Create an account [GitHub](https://github.com/) it will be used later.
+
+
+### ElephantSQL
+
+- Create an account [here](https://www.elephantsql.com/).
+- Login, create database and copy data base URL.
+<details><summary>Picture</summary>
+<img src="docs/deployment/7.png" alt="create database"/>
+</details>
+<br>
+<details><summary>Picture</summary>
+<img src="docs/deployment/8.png" alt="create database"/>
+</details>
+<br>
+<details><summary>Picture</summary>
+<img src="docs/deployment/9.png" alt="create database"/>
+</details>
+<br>
+<details><summary>Picture</summary>
+<img src="docs/deployment/10.png" alt="create database"/>
+</details>
+<br>
+<details><summary>Picture</summary>
+<img src="docs/deployment/11.png" alt="create database"/>
+</details>
+<br>
+<details><summary>Picture</summary>
+<img src="docs/deployment/12.png" alt="create database"/>
+</details>
+<br>
+
+## Local Deployment
+
+1. Go to Github repo [here](https://github.com/aboczek/Portfolio-Website) press **< CODE >** button, and press **COPY**.
+<details><summary>Picture</summary>
+<img src="docs/deployment/1.png" alt="deployment github"/>
+</details>
+<br>
+
+2. Go to your github repositories and create new repo, call it whatever you like. Press Create Repository it will lead you to another page, and press Gitpod it should open workspace for you. **If you use VSCODE on your PC just open new workspace**
+<details><summary>Picture</summary>
+<img src="docs/deployment/2.png" alt="deployment github"/>
+</details>
+<br>
+<details><summary>Picture</summary>
+<img src="docs/deployment/3.png" alt="deployment github"/>
+</details>
+<br>
+<details><summary>Picture</summary>
+<img src="docs/deployment/4.png" alt="deployment github"/>
+</details>
+<br>
+
+3. When Gitpod or VSCODE is open, type in git bash following "git clone https://github.com/aboczek/Portfolio-Website.git" without quotation marks, and press enter. It will clone my repository, if you are looking for better explanation go to this [link](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository?tool=desktop&platform=linux)
+<details><summary>Picture</summary>
+<img src="docs/deployment/5.png" alt="deployment github"/>
+</details>
+<br>
+
+4. When everything is downloaded select all files and drag it outside of the folder in root directory(main folder), then delete **Portfolio website** folder. Should look like this.
+<details><summary>Picture</summary>
+<img src="docs/deployment/6.png" alt="deployment github"/>
+</details>
+<br>
+
+5. Now you need to download all libraries and frameworks im using in this project.
+```
+pip3 install -r requirements.txt
+```
+
+6. Create env.py in main folder and add cloudinary api key, elephantSQL and your own secret key. Should look like below.
+```
+os.environ['DATABASE_URL'] = " url from elephantsql"
+os.environ['SECRET_KEY'] = "secret_key"
+os.environ['CLOUDINARY_URL'] = "api key from, remove 'CLOUDINARY_URL=' FROM BEGINING"
+```
+<details><summary>should look like this</summary>
+<img src="docs/deployment/13.png" alt="deployment github"/>
+</details>
+<br>
+
+7. After everything matches in previous step, we type in this command into terminal, this will migrate all models to database.
+```
+python3 manage.py migrate
+```
+<details><summary>should look like this</summary>
+<img src="docs/deployment/14.png" alt="deployment github"/>
+</details>
+<br>
+
+8. Now when its done we type in, this command to make superuser for admin panel. It will ask us for user name, email which is not required and password.
+(i have error in red just because i made similar password to username, for your deployment dont do this)
+
+```
+python3 manage.py createsuperuser
+```
+<details><summary>should look like this</summary>
+<img src="docs/deployment/15.png" alt="deployment github"/>
+</details>
+<br>
+
+9. Go to adam_portfolio folder and open **settings.py** and add this code to **ALLOWED_HOST**
+```
+.herokuapp.com, localhost
+```
+<details><summary>should look like this</summary>
+<img src="docs/deployment/host.png" alt="deployment github"/>
+</details>
+<br>
+
+
+10. Now we push our code to GitHub, with:
+```
+git add .
+git commit -m "your own commit"
+git push
+```
+
+11. Now we go to [Heroku](https://www.heroku.com/) and login, then we create new app as follows on pictures. Pick your own name for it and server closer to you.
+<details><summary>should look like this</summary>
+<img src="docs/deployment/heroku-1.png" alt="deployment heroku"/>
+<img src="docs/deployment/heroku-2.png" alt="deployment heroku"/>
+</details>
+<br>
+
+12. Then we add our variables into Heroku as follows.
+```
+DATABASE_URL - url as in envy.py
+SECRET_KEY - your secret key
+CLOUDINARY_URL - API key as in eny.py
+```
+<details><summary>should look like this</summary>
+<img src="docs/deployment/heroku-3.png" alt="deployment heroku"/>
+</details>
+<br>
+
+13. Now we go to deploy tab, connect our Github repo to heroku and press Deploy button is going to be grey, we have it pressed already here.
+<details><summary>should look like this</summary>
+<img src="docs/deployment/heroku-4.png" alt="deployment heroku"/>
+<img src="docs/deployment/heroku-5.png" alt="deployment heroku"/>
+</details>
+<br>
+
+14. When everything is deployed, press **View** button and website will open.
+<details><summary>should look like this</summary>
+<img src="docs/deployment/heroku-6.png" alt="deployment heroku"/>
+<img src="docs/deployment/heroku-7.png" alt="deployment heroku"/>
+</details>
+<br>
+
+15. Now in address bar type in after our website url **/accounts/login** and input your superuser password. If everything works you should see front panel.
+```
+https://pp4-deployment.herokuapp.com/accounts/login/
+```
+<details><summary>should look like this</summary>
+<img src="docs/deployment/live-1.png" alt="deployment heroku"/>
+<img src="docs/deployment/live-2.png" alt="deployment heroku"/>
+</details>
+<br>
+
+16. Now enjoy your new project, and fill it in with your data.
 
 # Credits:
 
@@ -572,4 +753,5 @@ Websites goal is to promote myself as full stack developer and show off my proje
 - [The W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) Validation of CSS.
 - [Autoprefixer](https://autoprefixer.github.io/) used to prefix CSS.
 - [Colorhexa](https://www.colorhexa.com/) was used to take colors from for readme.
+- [Sam Timmins](https://github.com/sam-timmins/swanbourne_village_stores) getting an idea from his deployment but done it my way.
 
