@@ -53,6 +53,15 @@ My motivation for this website is to have my personal portfolio website to put m
 
 Websites goal is to promote myself as full stack developer and show off my projects and skills I have gained over last few months.
 
+## Agile Methodology
+
+- This project uses Agile methodology with kanban board, each user story is presented as **EPIC** and its smaller issues are **TASKS**
+
+    <details><summary>Picture</summary>
+    <img src="docs/agile-kanban.png" alt="kanban board"/>
+    </details>
+    <br>
+
 ## Requirements
 
 - Landing Page.
@@ -336,8 +345,7 @@ Websites goal is to promote myself as full stack developer and show off my proje
     <img src="docs/index-errors.png" alt="error index page" width="">
 
     - Front panel has warnings about exceeding columns, i have it justified content is rendered in it from database and django autofills them,
-     and external user doesnt see it at all. I have tried fixing it but I dont have enough time till deadline to finish it up,
-      so decided to leave it till after the course. Talked with tutor and he said he cant see any issue with it and that I could flag it as a bug that browser is filling missing or adding extra tags to it. 
+     and external user doesnt see it at all. Talked with tutor and he said he cant see any issue with it and that I could flag it as a bug that browser is filling missing or adding extra tags to it. 
 <br>
     <img src="docs/warnings-table.png" alt="front panel validator warnings" width="700">
 
