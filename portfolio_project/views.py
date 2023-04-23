@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Details, Skills, Projects
 from .forms import SkillsForm, DetailsForm, ProjectsForm
+from django.contrib import messages
 
 
 def home(request):
@@ -54,18 +55,21 @@ def front_panel(request):
         details_form = DetailsForm(request.POST)
         if details_form.is_valid():
             details_form.save()
+            messages.success(request, 'Details has been created.')
             return redirect('front_panel')
 
     if request.method == 'POST':
         skills_form = SkillsForm(request.POST)
         if skills_form.is_valid():
             skills_form.save()
+            messages.success(request, 'Skill has been created.')
             return redirect('front_panel')
 
     if request.method == 'POST':
         projects_form = ProjectsForm(request.POST, request.FILES)
         if projects_form.is_valid():
             projects_form.save()
+            messages.success(request, 'Project has been created.')
             return redirect('front_panel')
 
     context = {
@@ -89,6 +93,7 @@ def edit_skill(request, skill_id):
         skills_form = SkillsForm(request.POST, instance=skill)
         if skills_form.is_valid():
             skills_form.save()
+            messages.success(request, 'Skill has been edited.')
             return redirect('front_panel')
     edit_skills_form = SkillsForm(instance=skill)
     context = {
@@ -105,6 +110,7 @@ def delete_skill(request, skill_id):
     """
     skill = get_object_or_404(Skills, id=skill_id)
     skill.delete()
+    messages.success(request, 'Skill has been deleted.')
     return redirect('front_panel')
 
 
@@ -117,6 +123,7 @@ def edit_detail(request, detail_id):
         details_form = DetailsForm(request.POST, instance=detail)
         if details_form.is_valid():
             details_form.save()
+            messages.success(request, 'Details has been edited.')
             return redirect('front_panel')
     details_form = DetailsForm(instance=detail)
     context = {
@@ -133,6 +140,7 @@ def delete_detail(request, detail_id):
     """
     detail = get_object_or_404(Details, id=detail_id)
     detail.delete()
+    messages.success(request, 'Details has been deleted.')
     return redirect('front_panel')
 
 
@@ -146,6 +154,7 @@ def edit_project(request, project_id):
                                      request.FILES, instance=project)
         if projects_form.is_valid():
             projects_form.save()
+            messages.success(request, 'Project has been edited.')
             return redirect('front_panel')
     edit_projects_form = ProjectsForm(instance=project)
     context = {
@@ -161,4 +170,5 @@ def delete_project(request, project_id):
     """
     project = get_object_or_404(Projects, id=project_id)
     project.delete()
+    messages.success(request, 'Project has been deleted.')
     return redirect('front_panel')

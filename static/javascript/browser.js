@@ -1,8 +1,7 @@
-window.addEventListener("load", () => {
-if (navigator.userAgent.indexOf("Firefox") != -1 ) {
-
-}
-else if (navigator.userAgent.indexOf("Safari") != -1 ) {
-
-}
+$(document).ready(function() {
+    setTimeout(function() {
+        if ($('#msg').length > 0) {
+            $('#msg').remove();
+        }
+    }, 3000);
 });

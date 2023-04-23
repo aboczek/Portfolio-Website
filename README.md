@@ -337,7 +337,7 @@ Websites goal is to promote myself as full stack developer and show off my proje
 
 # Testing
 
-1. W3C HTML Validator, CSS Validator, CI Pylinter.
+1. W3C HTML Validator, CSS Validator, CI Pylinter and jQuery JShint.
 
 - HTML
     - All pages visible for user works.
@@ -371,6 +371,12 @@ Websites goal is to promote myself as full stack developer and show off my proje
     views:
 
     <img src="docs/views-pylint.png" alt="views pylinter" width="900">
+
+- jQuery
+
+    Timeout function shows undefined as false alarm.
+
+    <img src="docs/jquery-validator.png" alt="jquery testing">
 
 2. Testing on website.
 

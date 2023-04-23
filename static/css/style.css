@@ -672,6 +672,10 @@ input#id_password {
             align-items: center;
 }
 
+.alert-success {
+    text-align: center;
+}
+
 /* Media Queries */
 
 @media (min-width:  320px) and (max-width: 768px) {
