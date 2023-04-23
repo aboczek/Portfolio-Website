@@ -2,7 +2,7 @@
 
 Welcome to my Portfolio project, it is about my coding story with information about me, my projects and my story.
 
-**placeholder**
+<img src="docs/amiresponsive.png" alt="am i responsive image" width="900">
 
 ## Table of content:
 
@@ -17,12 +17,14 @@ Welcome to my Portfolio project, it is about my coding story with information ab
         - [Desktop](#desktop)
         - [Tablet](#tablet)
         - [Mobile](#mobile)
+- [Authentication](#authentication)
+- [Data Structure](#data-structure)
 - [Website Structure](#website-structure)
 - [Technology, Frameworks and Programs used](#technology-frameworks-and-programs-used)
     - [Languages](#languages)
     - [Frameworks and programs used](#frameworks-and-programs-used)
 - [Features](#features)
-    - [Navigation bar](#navigation-bar)
+    - [Navigation bar](#navigation)
 - [Testing](#testing)
 - [Testing user stories](#testing-user-stories)
 - [Deployment](#deployment)
@@ -140,6 +142,79 @@ Websites goal is to promote myself as full stack developer and show off my proje
     </details>
     <br>
 
+# Authentication
+
+- Project uses [Allauth](https://django-allauth.readthedocs.io/en/latest/) for login system, allauth base, login and logout was adjusted and styled.
+  Random user wont be able to do anything even if they manage to register, front panel has code to check if user is staff and if not red button in the middle pops up to go back to home page.
+
+- Users cannot register this is **personal** Portfolio Project to use in future.
+
+- Register option exists but all admin functionality is pretected by is staff.
+
+    <details><summary>Login</summary>
+    <img src="docs/login.png" alt="login"/>
+    </details>
+    <br>
+    <details><summary>Logout</summary>
+    <img src="docs/logout.png" alt="logout"/>
+    </details>
+    <br>
+    <details><summary>if not staff</summary>
+    <img src="docs/not-staff.png" alt="not staff"/>
+    </details>
+    <br>
+
+
+# Data Structure
+
+## Database 
+
+- Details:
+    ```
+    id - is automatically generated.
+
+    full_name - CharField
+
+    age - PositiveBigInteger
+
+    nationality - Charfield
+
+    languages - Charfield
+
+    address - CharField
+    ```       
+
+- Skills:
+    ```
+    id - is automatically generated.
+
+    skill - CharField
+    ```
+
+- Projects:
+    ```
+    id - is automatically generated.
+
+    title - CharField
+
+    project_link - URLField
+
+    project_description - TextField
+
+    project_image - CloudinaryField
+    ```
+
+    <details><summary>Database structure image</summary>
+    <img src="docs/db-structure.png" alt="database structure" width="400"/>
+    </details>
+    <br>
+
+- Logic
+
+    <details><summary>Database structure image</summary>
+    <img src="docs/website-logic.png" alt="website logic" width="700"/>
+    </details>
+    <br>
 
 
 # Website structure
@@ -249,7 +324,7 @@ Websites goal is to promote myself as full stack developer and show off my proje
 
 # Testing
 
-1. W3C HTML Validator and CSS Validator
+1. W3C HTML Validator, CSS Validator, CI Pylinter.
 
 - HTML
     - All pages visible for user works.
@@ -269,6 +344,21 @@ Websites goal is to promote myself as full stack developer and show off my proje
 - CSS 
 
     <img src="docs/cssvalidator.png" alt="css validator" width="700">
+
+
+- Python3
+
+    forms:
+
+    <img src="docs/forms-py-validator.png" alt="forms pylinter" width="900">
+
+    models:
+
+    <img src="docs/models-pylint.png" alt="models pylinter" width="900">
+
+    views:
+
+    <img src="docs/views-pylint.png" alt="views pylinter" width="900">
 
 2. Testing on website.
 
@@ -456,25 +546,18 @@ Websites goal is to promote myself as full stack developer and show off my proje
 </details>
 <br>
 
-| **Feature**                     | **Action**                          | **Expected Result**                                                                  | **Result** |
-|---------------------------------|-------------------------------------|--------------------------------------------------------------------------------------|-------------------|
-| placeholder | placeholder | placeholder              |
-<details><summary>Picture</summary>
-<img src="" alt=""/>
-</details>
-<br>
-
 # Deployment
 
 **placeholder**
 
 # Credits:
 
-- [Pexels](https://www.pexels.com/) images.
+- Slack Community and my Mentor!
+- Tutor Support.
 - [Simen Daehlin](https://github.com/Eventyret) My Mentor very Helpfull!.
+- [Pexels](https://www.pexels.com/) images.
 - [The W3C Markup Validation Service](https://validator.w3.org/) Validation of HTML.
 - [The W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) Validation of CSS.
 - [Autoprefixer](https://autoprefixer.github.io/) used to prefix CSS.
 - [Colorhexa](https://www.colorhexa.com/) was used to take colors from for readme.
-- Slack Community and my Mentor!
-- Tutor Support.
+

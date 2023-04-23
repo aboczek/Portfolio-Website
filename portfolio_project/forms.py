@@ -11,7 +11,7 @@ class SkillsForm(forms.ModelForm):
         Meta for skills form.
         """
         model = Skills
-        fields = ['skill',]
+        fields = ['skill', ]
 
 
 class DetailsForm(forms.ModelForm):
@@ -35,4 +35,5 @@ class ProjectsForm(forms.ModelForm):
         Meta for details form.
         """
         model = Projects
-        fields = ['title', 'project_link', 'project_description', 'project_image']
+        fields = ['title', 'project_link',
+                  'project_description', 'project_image']

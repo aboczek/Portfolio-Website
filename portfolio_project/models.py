@@ -3,6 +3,7 @@ from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
+
 class Details(models.Model):
     """
     Database model for details.
@@ -39,4 +40,3 @@ class Projects(models.Model):
 
     def __str__(self):
         return str(self.title)
-        

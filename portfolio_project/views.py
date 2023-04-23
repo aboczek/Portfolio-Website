@@ -38,6 +38,7 @@ def projects(request):
     }
     return render(request, 'pages/projects.html', context)
 
+
 def front_panel(request):
     """
     Front custom admin panel.
@@ -77,6 +78,7 @@ def front_panel(request):
         'title': 'Hello Boss',
         }
     return render(request, 'pages/front-panel.html', context)
+
 
 def edit_skill(request, skill_id):
     """
@@ -124,6 +126,7 @@ def edit_detail(request, detail_id):
 
     return render(request, 'pages/edit-detail.html', context)
 
+
 def delete_detail(request, detail_id):
     """
     Deleting details in front panel.
@@ -132,13 +135,15 @@ def delete_detail(request, detail_id):
     detail.delete()
     return redirect('front_panel')
 
+
 def edit_project(request, project_id):
     """
     Editing projects in front panel.
     """
     project = get_object_or_404(Projects, id=project_id)
     if request.method == 'POST':
-        projects_form = ProjectsForm(request.POST, request.FILES, instance=project)
+        projects_form = ProjectsForm(request.POST,
+                                     request.FILES, instance=project)
         if projects_form.is_valid():
             projects_form.save()
             return redirect('front_panel')
@@ -157,4 +162,3 @@ def delete_project(request, project_id):
     project = get_object_or_404(Projects, id=project_id)
     project.delete()
     return redirect('front_panel')
-    
