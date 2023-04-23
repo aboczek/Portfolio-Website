@@ -260,9 +260,9 @@ Websites goal is to promote myself as full stack developer and show off my proje
 
     <img src="docs/index-errors.png" alt="error index page" width="">
 
-    - Front panel has warnings about exceeding columns, i have it justified content is rendered in it from database,
+    - Front panel has warnings about exceeding columns, i have it justified content is rendered in it from database and django autofills them,
      and external user doesnt see it at all. I have tried fixing it but I dont have enough time till deadline to finish it up,
-      so decided to leave it till after the course.
+      so decided to leave it till after the course. Talked with tutor and he said he cant see any issue with it and that I could flag it as a bug that browser is filling missing or adding extra tags to it. 
 <br>
     <img src="docs/warnings-table.png" alt="front panel validator warnings" width="700">
 
@@ -334,11 +334,19 @@ Websites goal is to promote myself as full stack developer and show off my proje
 
 - CV doesnt download. (Fixed)
 - Images wouldnt upload after adding more code to views. (Fixed)
+- Front panel, unauthenticated users return button.(fixed)
 - Front panel, buttons in project preview grow after fixing html errors.
 
 6. Bugs Fixed.
 
 - CV needed download as attribute in html files, that solved the issue.
+
+- Front panel, unauthenticated return button was fixed by nesting **a** tag in a **div** and moving **id redirection** to **div**, then adding bootstrap class **btn** to it.
+
+<details><summary>Button</summary>
+<img src="docs/return-button.png" alt="return button"/>
+</details>
+<br>
 
 - Images fix was adding "request.File" to edit and create functions and "enctype="multipart/form-data" to front-panel.html create form and edit-project.html.
 <details><summary>Edit project view</summary>
@@ -359,6 +367,94 @@ Websites goal is to promote myself as full stack developer and show off my proje
 <br>
 
 # Testing user stories
+
+| **Feature**                     | **Action**                          | **Expected Result**                                                                  | **Result** |
+|---------------------------------|-------------------------------------|--------------------------------------------------------------------------------------|-------------------|
+| As a user, I want to be able to land on main page | Type in websites address | Website will load and go to main page | PASS |
+<details><summary>Picture</summary>
+<img src="docs/1.jpg" alt="home page"/>
+</details>
+<br>
+
+| **Feature**                     | **Action**                          | **Expected Result**                                                                  | **Result** |
+|---------------------------------|-------------------------------------|--------------------------------------------------------------------------------------|-------------------|
+| As a user, I want to be able to navigate to about page | While being on home page, click hamburger menu and press **about me** button | By pressing **about me** button, it will lead you to about me page with details and skills | PASS |
+<details><summary>Picture</summary>
+<img src="docs/2.png" alt="about me page"/>
+</details>
+<br>
+
+| **Feature**                     | **Action**                          | **Expected Result**                                                                  | **Result** |
+|---------------------------------|-------------------------------------|--------------------------------------------------------------------------------------|-------------------|
+| As a user, I want to be able to navigate to projects pages | Click on hamburger menu and press **projects** | By pressing **projects** button it will lead you to projects preview page. | PASS |
+<details><summary>Picture</summary>
+<img src="docs/3.png" alt="projects preview page"/>
+</details>
+<br>
+
+| **Feature**                     | **Action**                          | **Expected Result**                                                                  | **Result** |
+|---------------------------------|-------------------------------------|--------------------------------------------------------------------------------------|-------------------|
+| As a user, I want to navigate through website easily | Press hamburger menu and select any button | By selecting buttons it will lead you to pages accordingly to what you pressed | PASS |
+<details><summary>Picture</summary>
+<img src="docs/hamburger.png" alt="hamburger menu"/>
+</details>
+<br>
+
+| **Feature**                     | **Action**                          | **Expected Result**                                                                  | **Result** |
+|---------------------------------|-------------------------------------|--------------------------------------------------------------------------------------|-------------------|
+| As a user, I want to see projects done by the developer | Press hamburger menu and click **projects** | By selecting **projects** buton it will lead you to projects preview, where you can preview them and open any you want that will lead you to GitHub repository | PASS |
+<details><summary>Picture</summary>
+<img src="docs/3.png" alt="projects preview page"/>
+</details>
+<br>
+<details><summary>Picture of repo as example</summary>
+<img src="docs/github-repo-example.png" alt="github repo"/>
+</details>
+<br>
+
+| **Feature**                     | **Action**                          | **Expected Result**                                                                  | **Result** |
+|---------------------------------|-------------------------------------|--------------------------------------------------------------------------------------|-------------------|
+| As a user, I want to be able to visit developer's GitHub | Press GitHub icon in **footer** or open **projects** page and click on a link | By selecting any of those, it will lead you to GitHub profile or repository | PASS |
+<details><summary>Picture</summary>
+<img src="docs/github-1.png" alt="home page pointing at footer"/>
+</details>
+<br>
+<details><summary>Picture</summary>
+<img src="docs/github-2.png" alt="projects preview pointing at link"/>
+</details>
+<br>
+
+| **Feature**                     | **Action**                          | **Expected Result**                                                                  | **Result** |
+|---------------------------------|-------------------------------------|--------------------------------------------------------------------------------------|-------------------|
+| As a user, I want to be able to download CV from developer | In footer or hamburger menu press **Download** Icon or **CV** button | By pressing those buttons it will download/open my CV for you| PASS |
+<details><summary>Picture</summary>
+<img src="docs/cv-download-1.png" alt="cv download"/>
+</details>
+<br>
+<details><summary>Picture</summary>
+<img src="docs/cv-download-2.png" alt="cv download"/>
+</details>
+<br>
+
+| **Feature**                     | **Action**                          | **Expected Result**                                                                  | **Result** |
+|---------------------------------|-------------------------------------|--------------------------------------------------------------------------------------|-------------------|
+| As a user, I want to see where Developer is located | Press **about me** page on hamburger menu | About me page tells where developer is located | PASS |
+<details><summary>Picture</summary>
+<img src="docs/located.png" alt="about me location"/>
+</details>
+<br>
+
+| **Feature**                     | **Action**                          | **Expected Result**                                                                  | **Result** |
+|---------------------------------|-------------------------------------|--------------------------------------------------------------------------------------|-------------------|
+| As a user, I want to contact the Developer if I want to message him/her | In **footer** or **CV** there is email provided or email function that will open email draf for you | User gets my email or email inbox opens up with window open to send an email |
+<details><summary>Picture</summary>
+<img src="docs/email-1.png" alt="email footer"/>
+</details>
+<br>
+<details><summary>Picture</summary>
+<img src="docs/email-2.png" alt="email cv"/>
+</details>
+<br>
 
 | **Feature**                     | **Action**                          | **Expected Result**                                                                  | **Result** |
 |---------------------------------|-------------------------------------|--------------------------------------------------------------------------------------|-------------------|
