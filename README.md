@@ -151,7 +151,7 @@ Websites goal is to promote myself as full stack developer and show off my proje
     </details>
     <br>
 
-# Authentication
+# Authentication and Security
 
 - Project uses [Allauth](https://django-allauth.readthedocs.io/en/latest/) for login system, allauth base, login and logout was adjusted and styled.
   Random user wont be able to do anything even if they manage to register, front panel has code to check if user is staff and if not red button in the middle pops up to go back to home page.
@@ -172,6 +172,10 @@ Websites goal is to promote myself as full stack developer and show off my proje
     <img src="docs/not-staff.png" alt="not staff"/>
     </details>
     <br>
+
+- Security
+
+    - All secret keys are stored safely in **envy.py** for development stages and added to Heroku variables for production release.
 
 
 # Data Structure
@@ -544,7 +548,7 @@ Websites goal is to promote myself as full stack developer and show off my proje
 
 | **Feature**                     | **Action**                          | **Expected Result**                                                                  | **Result** |
 |---------------------------------|-------------------------------------|--------------------------------------------------------------------------------------|-------------------|
-| As a user, I want to contact the Developer if I want to message him/her | In **footer** or **CV** there is email provided or email function that will open email draf for you | User gets my email or email inbox opens up with window open to send an email |
+| As a user, I want to contact the Developer if I want to message him/her | In **footer** or **CV** there is email provided or email function that will open email draf for you | User gets my email or email inbox opens up with window open to send an email | PASS |
 <details><summary>Picture</summary>
 <img src="docs/email-1.png" alt="email footer"/>
 </details>
