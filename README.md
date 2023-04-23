@@ -727,7 +727,7 @@ CLOUDINARY_URL - API key as in eny.py
 14. When everything is deployed, press **View** button and website will open.
 <details><summary>should look like this</summary>
 <img src="docs/deployment/heroku-6.png" alt="deployment heroku"/>
-<img src="docs/deployment/heroku-7.png" alt="deployment heroku"/>
+<img src="docs/deployment/heroku-7.jpg" alt="deployment heroku"/>
 </details>
 <br>
 
