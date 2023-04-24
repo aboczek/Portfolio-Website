@@ -438,14 +438,63 @@ Websites goal is to promote myself as full stack developer and show off my proje
     </details>
     <br>
 
-5. Known bugs.
+5. Manual testing.
+
+ - Manual testing was done only on data change notifications if Data was created, edited or deleted.
+
+
+    <details><summary>Login Notification</summary>
+    <img src="docs/manual-testing/login-notification.png" alt="login"/>
+    </details>
+    <br>
+    <details><summary>Details created</summary>
+    <img src="docs/manual-testing/create-detail.png" alt="create detail"/>
+    </details>
+    <br>
+    <details><summary>Details edited</summary>
+    <img src="docs/manual-testing/detail-edit.png" alt="edit detail"/>
+    </details>
+    <br>
+    <details><summary>Project created</summary>
+    <img src="docs/manual-testing/project-created.png" alt="create project"/>
+    </details>
+    <br>
+    <details><summary>Project edited</summary>
+    <img src="docs/manual-testing/project-created.png" alt="edited project"/>
+    </details>
+    <br>
+    <details><summary>Project deleted</summary>
+    <img src="docs/manual-testing/project-created.png" alt="deleted project"/>
+    </details>
+    <br>
+    <details><summary>Skill created</summary>
+    <img src="docs/manual-testing/Skills-created.png" alt="Create skill"/>
+    </details>
+    <br>
+    <details><summary>Skill edited</summary>
+    <img src="docs/manual-testing/skill-edited.png" alt="edited skill"/>
+    </details>
+    <br>
+    <details><summary>Skill deleted</summary>
+    <img src="docs/manual-testing/skills-deleted.png" alt="deleted skill"/>
+    </details>
+    <br>
+
+    
+
+
+6. Known bugs.
 
 - CV doesnt download. (Fixed)
 - Images wouldnt upload after adding more code to views. (Fixed)
 - Front panel, unauthenticated users return button.(fixed)
+- Front panel, delete details doesnt work. Its a minor bug, details shouldnt be deleted just created and edited if necessary. Full CRUD works for rest of the functions. Code exists but says: 
+```
+Not Found The requested resource was not found on this server.
+```
 - Front panel, buttons in project preview grow after fixing html errors.
 
-6. Bugs Fixed.
+7. Bugs Fixed.
 
 - CV needed download as attribute in html files, that solved the issue.
 
