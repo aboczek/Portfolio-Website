@@ -249,6 +249,8 @@ Websites goal is to promote myself as full stack developer and show off my proje
 
 - [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 
+- [jQuery](https://en.wikipedia.org/wiki/JQuery)
+
 ## Frameworks and Libraries used.
 
 - [Django](https://www.djangoproject.com/) Python-based web framework that follows the model–template–views architectural pattern.
