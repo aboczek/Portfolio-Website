@@ -242,7 +242,7 @@ Websites goal is to promote myself as full stack developer and show off my proje
 
 - [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 
-- [jQuery](https://en.wikipedia.org/wiki/JQuery)
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 
 ## Frameworks and Libraries used.
 
@@ -367,11 +367,9 @@ Websites goal is to promote myself as full stack developer and show off my proje
 
     <img src="docs/views-pylint.png" alt="views pylinter" width="900">
 
-- jQuery
+- JavaScript
 
-    Timeout function shows undefined as false alarm.
-
-    <img src="docs/jquery-validator.png" alt="jquery testing">
+    <img src="docs/js-linting.png" alt="javascript linting">
 
 2. Testing on website.
 

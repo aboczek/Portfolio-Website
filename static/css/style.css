@@ -38,7 +38,7 @@ html {
 
 body {
     font-family: 'PT-serif', sans-serif;
-    font-size: 2rem;
+    font-size: 1.6rem;
     min-height: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -272,6 +272,7 @@ body {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
+    font-size: 2rem;
 }
 
 #details-info-two > p {
@@ -281,6 +282,7 @@ body {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
+    font-size: 2rem;
 }
 
 #skills {
@@ -314,6 +316,7 @@ body {
     max-width: 45rem;
     margin-left: auto;
     margin-right: auto;
+    font-size: 2rem;
 }
 
 /* Projects page */
@@ -350,6 +353,7 @@ body {
         -ms-flex-align: center;
             align-items: center;
     padding-top: 4rem;
+    font-size: 2rem;
 }
 
 .project-description > div {
@@ -397,18 +401,20 @@ div#project-description {
     width: 30%;
 }
 
+/* Front panel and allauth override */
+
 #login-panel > input,
-#id_project_description,    /* front panel project description */
-#id_project_link,           /* front panel project link */
-#id_title,                  /* front panel title */
-#id_skill,                  /* front panel skills */
-#id_full_name,              /* front panel full name */
-#id_age,                    /* front panel age */
-#id_nationality,            /* front panel nationality */
-#id_languages,              /* front panel languages */
-#id_address,                /* front panel address */
-#id_login,                  /* allauth login */
-#id_password {              /* allauth password */
+#id_project_description,
+#id_project_link,
+#id_title,
+#id_skill,
+#id_full_name,
+#id_age,
+#id_nationality,
+#id_languages,
+#id_address,
+#id_login,
+#id_password {
     border:2px solid var(--light-grey);
     padding-left: 1rem;
     margin-left: 1rem;
@@ -506,6 +512,7 @@ input#id_password {
         -ms-flex-align: center;
             align-items: center;
     padding-top: 2rem;
+    font-size: 2rem;
 }
 
 #skills-info-panel {
@@ -523,9 +530,8 @@ input#id_password {
 #skills-info-panel p {
     margin-top: 1rem;
     padding: 1rem 2rem 0 0;
-
+    font-size: 2rem;
 }
-
 
 #id_project_link {
     display: -webkit-box;
@@ -541,6 +547,10 @@ input#id_password {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+}
+
+#projects-form {
+    font-size: 2rem;
 }
 
 #projects-form,
@@ -567,6 +577,7 @@ input#id_password {
 #border-project {
     border-left: 2px var(--grey) dotted;
     padding-left: 3rem;
+    font-size: 2rem;
 }
 
 .btn-padding {
@@ -671,6 +682,7 @@ input#id_password {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    font-size: 2rem;
 }
 
 .alert-success {
