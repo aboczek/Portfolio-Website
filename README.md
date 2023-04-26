@@ -96,7 +96,7 @@ Websites goal is to promote myself as full stack developer and show off my proje
 
     - PT-serif and backup San-serif
 
-        - [Google fonts](https://fonts.google.com/specimen/PT+Serif)
+        - [PT-serif](https://fonts.google.com/specimen/PT+Serif)
 
     - Images:
 
@@ -125,7 +125,7 @@ Websites goal is to promote myself as full stack developer and show off my proje
     </details>
     <br>
 
-- Front panel page.
+- Frontend admin panel page.
     <details><summary>Picture</summary>
     <img src="docs/front-panel-details.png" alt="front panel details section"/>
     </details>
@@ -139,7 +139,7 @@ Websites goal is to promote myself as full stack developer and show off my proje
     </details>
     <br>
 
-- Front panel editing pages.
+- Frontend admin panel editing pages.
     <details><summary>Picture</summary>
     <img src="docs/edit-pages.png" alt="front panel editiing pages"/>
     </details>
@@ -158,7 +158,7 @@ Websites goal is to promote myself as full stack developer and show off my proje
 
 - Users cannot register this is **personal** Portfolio Project to use in future.
 
-- The register option exists but all admin functionality is protected by the **is_staff**.
+- The register option exists but all admin functionality is protected by the *is_staff*.
 
     <details><summary>Login</summary>
     <img src="docs/login.png" alt="login"/>
@@ -175,7 +175,7 @@ Websites goal is to promote myself as full stack developer and show off my proje
 
 - Security
 
-    - All secret keys are stored safely in **envy.py** for development stages and added to Heroku variables for production release.
+    - All secret keys are stored safely in **env.py** for development stages and added to Heroku variables for production release.
 
 
 # Data Structure
@@ -183,48 +183,41 @@ Websites goal is to promote myself as full stack developer and show off my proje
 ## Database 
 
 - Details:
-    ```
-    id - is automatically generated.
 
-    full_name - CharField
-
-    age - PositiveBigInteger
-
-    nationality - Charfield
-
-    languages - Charfield
-
-    address - CharField
-    ```       
+    | Object | Field |
+    |---|---|
+    | ID | is automatically generated |
+    | full_name | CharField |
+    | age | PositiveBigInteger |
+    | nationality | Charfield |
+    | languages | Charfield |
+    | address | CharField |
 
 - Skills:
-    ```
-    id - is automatically generated.
 
-    skill - CharField
-    ```
+    | Object | Field |
+    |---|---|
+    |  ID | is automatically generated |
+    | skill | CharField |
 
 - Projects:
-    ```
-    id - is automatically generated.
 
-    title - CharField
+    | Object | Field |
+    |---|---|
+    | ID | is automatically generated |
+    | title | CharField |
+    | project_link | URLField |
+    | project_description | TextField |
+    | project_image | CloudinaryField |
 
-    project_link - URLField
-
-    project_description - TextField
-
-    project_image - CloudinaryField
-    ```
-
-    <details><summary>Database structure image</summary>
+    <details><summary>Database structure image here </summary>
     <img src="docs/db-structure.png" alt="database structure" width="400"/>
     </details>
     <br>
 
 - Logic
 
-    <details><summary>Database structure image</summary>
+    <details><summary>Database structure image here</summary>
     <img src="docs/website-logic.png" alt="website logic" width="700"/>
     </details>
     <br>
@@ -283,7 +276,7 @@ Websites goal is to promote myself as full stack developer and show off my proje
 
 - Responsive on all devices.
 - Interactive buttons.
-- Custom front panel.
+- Custom frontend admin panel.
 - Cloudinary picture storage.
 
 ## Navigation
@@ -320,7 +313,7 @@ Websites goal is to promote myself as full stack developer and show off my proje
     <img src="docs/2-small.png" alt="about me page small device view" width="500">
     <img src="docs/3-small.png" alt="projects page small device view" width="500">
 
-- Front panel which only I have access to.
+- Frontend admin panel which only I have access to.
     - large devices.
 
     <img src="docs/1-front-details.png" alt="front panel details" width="1000">
@@ -335,7 +328,7 @@ Websites goal is to promote myself as full stack developer and show off my proje
 
     <img src="docs/6-front-projects.png" alt="front panel details" width="700">
 
-- Small devices dont scale nicely on front panel no pictures to be added.
+- Small devices dont scale nicely on frontend admin panel no pictures to be added.
 
 # Testing
 
@@ -350,7 +343,7 @@ Websites goal is to promote myself as full stack developer and show off my proje
 
     <img src="docs/index-errors.png" alt="error index page" width="">
 
-    - Front panel has warnings about exceeding columns, i have it justified content is rendered in it from database and django autofills them,
+    - Frontend admin panel has warnings about exceeding columns, i have it justified content is rendered in it from database and django autofills them,
      and external user doesnt see it at all. Talked with tutor and he said he cant see any issue with it and that I could flag it as a bug that browser is filling missing or adding extra tags to it. 
 <br>
     <img src="docs/warnings-table.png" alt="front panel validator warnings" width="700">
@@ -404,6 +397,18 @@ Websites goal is to promote myself as full stack developer and show off my proje
     <img src="docs/testing-tablet.png" alt="testing tablet">
 
 4. Automated testing done by me all passing except URLS showing that imports are not tested.
+
+- To run testing you need to comment out postgres database and uncomment sqlite code in settings, like in the picture in spoiler below.
+<details><summary>How settings should look</summary>
+    <img src="docs/manual-testing/db-test.png" alt="views testing"/>
+    </details>
+    <br>
+
+then run this command:
+
+    ```
+    python3 manage.py test
+    ```
 
 - Views automatic testing:
 
@@ -486,21 +491,25 @@ Websites goal is to promote myself as full stack developer and show off my proje
 
 
 6. Known bugs.
-
-- CV doesnt download. (Fixed)
-- Images wouldnt upload after adding more code to views. (Fixed)
-- Front panel, unauthenticated users return button.(fixed)
-- Front panel, delete details doesnt work. Its a minor bug, details shouldnt be deleted just created and edited if necessary. Full CRUD works for rest of the functions. Code exists but says: 
+- ISSUE: [#75](https://github.com/aboczek/Portfolio-Website/issues/75)
+Frontend admin panel, delete details doesnt work. Its a minor bug, details shouldnt be deleted just created and edited if necessary. Full CRUD works for rest of the functions. Code exists but says: 
 ```
 Not Found The requested resource was not found on this server.
 ```
-- Front panel, buttons in project preview grow after fixing html errors.
+- ISSUE: [#74](https://github.com/aboczek/Portfolio-Website/issues/74)
+Frontend admin panel, buttons in project preview grow with table depending of length of description.
 
 7. Bugs Fixed.
 
-- CV needed download as attribute in html files, that solved the issue.
+- ISSUE: [#76](https://github.com/aboczek/Portfolio-Website/issues/76)
+CV needed download as attribute in html files, that solved the issue.
 
-- Front panel, unauthenticated return button was fixed by nesting **a** tag in a **div** and moving **id redirection** to **div**, then adding bootstrap class **btn** to it.
+- ISSUE: [#73](https://github.com/aboczek/Portfolio-Website/issues/73)
+Frontend admin panel, unauthenticated return button was fixed by nesting **a** tag in a **div** and moving **id redirection** to **div**, then adding bootstrap class **btn** to it.
+
+- ISSUE: [#42](https://github.com/aboczek/Portfolio-Website/issues/42)
+Images wouldnt upload after adding more code to views.
+
 
 <details><summary>Button</summary>
 <img src="docs/return-button.png" alt="return button"/>
@@ -637,6 +646,10 @@ Not Found The requested resource was not found on this server.
 
 ### GitHub
 
+- Login to your [GitHub](https://github.com/)
+
+OR
+
 - Create an account [GitHub](https://github.com/) it will be used later.
 
 
@@ -669,7 +682,7 @@ Not Found The requested resource was not found on this server.
 </details>
 <br>
 
-## Local Deployment
+## Local Development
 
 1. Go to Github repo [here](https://github.com/aboczek/Portfolio-Website) press **< CODE >** button, and press **COPY**.
 <details><summary>Picture</summary>
@@ -677,7 +690,17 @@ Not Found The requested resource was not found on this server.
 </details>
 <br>
 
+OR **FORK** my repo [here](https://github.com/aboczek/Portfolio-Website) and **CLONE IT**
+<details><summary>Picture</summary>
+<img src="docs/fork.png" alt="deployment github"/>
+<img src="docs/fork-2.png" alt="deployment github"/>
+</details>
+<br>
+
+- If u copied the link to clone go to **step 3** and instead of link provided there use the link you have copied from your fork.
+
 2. Go to your github repositories and create new repo, call it whatever you like. Press Create Repository it will lead you to another page, and press Gitpod it should open workspace for you. **If you use VSCODE on your PC just open new workspace**
+
 <details><summary>Picture</summary>
 <img src="docs/deployment/2.png" alt="deployment github"/>
 </details>
@@ -708,7 +731,7 @@ Not Found The requested resource was not found on this server.
 pip3 install -r requirements.txt
 ```
 
-6. Create env.py in main folder and add cloudinary api key, elephantSQL and your own secret key. Should look like below.
+6. Create **env.py** in main folder and add cloudinary api key, elephantSQL and your own secret key. Should look like below. (IF you name the **env.py** file wrong your password will be leaked to your repo.)
 ```
 os.environ['DATABASE_URL'] = " url from elephantsql"
 os.environ['SECRET_KEY'] = "secret_key"
@@ -788,7 +811,7 @@ CLOUDINARY_URL - API key as in eny.py
 </details>
 <br>
 
-15. Now in address bar type in after our website url **/accounts/login** and input your superuser password. If everything works you should see front panel.
+15. Now in address bar type in after our website url **/accounts/login** and input your superuser password. If everything works you should see frontend admin panel.
 ```
 https://pp4-deployment.herokuapp.com/accounts/login/
 ```
