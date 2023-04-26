@@ -1,0 +1,25 @@
+<table class="details-table">
+    {% for detail in details %}
+    <tr class="details-table">
+        <td>
+            {{ detail.full_name }}
+        </td>
+        <td>
+            {{ detail.age }}
+        </td>
+        <td>
+            {{ detail.nationality }}
+        </td>
+        <td>
+            {{ detail.languages }}
+        </td>
+        <td>
+            {{ detail.address }}
+        </td>
+        <td>
+            <a href="/edit-detail/{{ detail.id }}" class="btn-skills btn btn-info">Edit</a>
+            <a href="/edit-delete/{{ detail.id }}" class="btn-skills btn btn-danger">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>

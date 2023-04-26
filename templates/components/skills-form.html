@@ -1,0 +1,20 @@
+<form method="POST">
+    {% csrf_token %}
+    <div class="container-lg mb-5">
+        <div class="row">
+            <div class="col">
+                <table class="input-skills">
+                    <tr>
+                        <td>
+                            <!-- Skills form -->
+                            {{ skills_form }}
+                        </td>
+                        <td class="btn-skills">
+                            <button type="submit" class="btn btn-success">Create</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</form>

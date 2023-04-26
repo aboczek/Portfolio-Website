@@ -1,0 +1,35 @@
+{% load static %}
+
+<table>
+    <tr>
+        <td class="project-preview">
+            <ul>
+                <li class="project-padding">
+                    {{ project.title }}
+                </li>
+                <li>
+                    <a href="{{ project.project_link }}"
+                        target="_blank">{{ project.project_link }}</a>
+                </li>
+                <li>
+                    <p>{{ project.project_description }}</p>
+                </li>
+                <li>
+                    {% if "placeholder" in project.project_image.url %}
+                    <img src="{% static 'images/placeholder.png' %}" alt="placeholder" width="300">
+                    {% else %}
+                    <img src="{{ project.project_image.url }}" alt="test" width="300">
+                    {% endif %}
+                </li>
+            </ul>
+        </td>
+        <td>
+            <a href="/edit-project/{{ project.id }}" class="btn-skills btn btn-info"
+                aria-label="edit project">Edit</a>
+        </td>
+        <td>
+            <a href="/delete-project/{{ project.id }}" aria-label="delete project"
+                class="btn-skills btn-padding btn btn-danger">Delete</a>
+        </td>
+    </tr>
+</table>

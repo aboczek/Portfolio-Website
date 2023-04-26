@@ -1,0 +1,17 @@
+<table>
+    {% for skill in skills %}
+    <tr>
+        <td>
+            <p>{{ skill.skill }}</p>
+        </td>
+        <td>
+            <a href="/edit-skill/{{ skill.id }}"
+                class="btn-skills btn-padding btn btn-info">Edit</a>
+        </td>
+        <td>
+            <a href="/delete-skill/{{ skill.id }}"
+                class="btn-skills btn-padding btn btn-danger">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>

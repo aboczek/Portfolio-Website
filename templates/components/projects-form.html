@@ -1,0 +1,16 @@
+<form method="POST" id="projects-form" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <table>
+                            <tr>
+                                <td>
+                                    <!-- Projects form -->
+                                    {{ projects_form }}
+                                </td>
+                                <td>
+                                    <div class="btn-skills">
+                                        <button class="btn btn-success" type="submit">Create</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
