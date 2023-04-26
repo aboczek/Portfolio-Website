@@ -1,7 +1,8 @@
-$(document).ready(function() {
-    setTimeout(function() {
-        if ($('#msg').length > 0) {
-            $('#msg').remove();
-        }
+document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(() => {
+      const msg = document.querySelector("#msg");
+      if (msg) {
+        msg.parentNode.removeChild(msg);
+      }
     }, 3000);
-});
+  });
