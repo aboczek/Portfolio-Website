@@ -321,6 +321,10 @@ body {
 
 /* Projects page */
 
+#msg {
+    font-size: 2rem;
+}
+
 #projects {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -656,6 +660,7 @@ input#id_password {
 
 #myTab {
     padding: 1rem 0 0 7.5rem;
+    font-size: 2rem;
 }
 
 .nav-tabs {
