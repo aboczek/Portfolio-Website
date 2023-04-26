@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib import messages
+from django.contrib.admin.views.decorators import staff_member_required
 from .models import Details, Skills, Projects
 from .forms import SkillsForm, DetailsForm, ProjectsForm
-from django.contrib import messages
+
 
 
 def home(request):
@@ -39,7 +41,7 @@ def projects(request):
     }
     return render(request, 'pages/projects.html', context)
 
-
+@staff_member_required
 def front_panel(request):
     """
     Front custom admin panel.
@@ -83,7 +85,7 @@ def front_panel(request):
         }
     return render(request, 'pages/front-panel.html', context)
 
-
+@staff_member_required
 def edit_skill(request, skill_id):
     """
     Editing skills in front panel.
@@ -103,7 +105,7 @@ def edit_skill(request, skill_id):
 
     return render(request, 'pages/edit-skill.html', context)
 
-
+@staff_member_required
 def delete_skill(request, skill_id):
     """
     Deleting skills in front panel.
@@ -113,7 +115,7 @@ def delete_skill(request, skill_id):
     messages.success(request, 'Skill has been deleted.')
     return redirect('front_panel')
 
-
+@staff_member_required
 def edit_detail(request, detail_id):
     """
     Editing details in front panel.
@@ -133,7 +135,7 @@ def edit_detail(request, detail_id):
 
     return render(request, 'pages/edit-detail.html', context)
 
-
+@staff_member_required
 def delete_detail(request, detail_id):
     """
     Deleting details in front panel.
@@ -143,7 +145,7 @@ def delete_detail(request, detail_id):
     messages.success(request, 'Details has been deleted.')
     return redirect('front_panel')
 
-
+@staff_member_required
 def edit_project(request, project_id):
     """
     Editing projects in front panel.
@@ -164,6 +166,7 @@ def edit_project(request, project_id):
 
     return render(request, 'pages/edit-project.html', context)
 
+@staff_member_required
 def delete_project(request, project_id):
     """
     Deleting project in front panel.

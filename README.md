@@ -508,6 +508,16 @@ Frontend admin panel, unauthenticated return button was fixed by nesting **a** t
 - ISSUE: [#42](https://github.com/aboczek/Portfolio-Website/issues/42)
 Images wouldnt upload after adding more code to views.
 
+- ISSUE: [#75](https://github.com/aboczek/Portfolio-Website/issues/75)
+Frontend admin panel, delete details doesnt work. Fixed by changing url from *"edit-delete"* to *"delete-detail"* as it should be.
+```
+Not Found The requested resource was not found on this server.
+```
+
+<details><summary>Delete details</summary>
+<img src="docs/delete-function-fix.png" alt="return button"/>
+</details>
+<br>
 
 <details><summary>Button</summary>
 <img src="docs/return-button.png" alt="return button"/>
